@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error loading component:", error));
     }
 
-    loadComponent("navbar", "../templates/navbar.html");
-    loadComponent("sidebar", "../templates/sidebar.html");
-    loadComponent("reservations", "../templates/reservations.html");
-    loadComponent("confirmation-dialog", "../templates/confirmation-dialog.html");
+    loadComponent("navbar", "../templates/fragments/navbar.html");
+    loadComponent("sidebar", "../templates/fragments/sidebar.html");
+    loadComponent("reservations", "../templates/fragments/reservations.html");
+    loadComponent("confirmation-dialog", "../templates/fragments/confirmation-dialog.html");
 });

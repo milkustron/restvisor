@@ -7,28 +7,73 @@
     width: 100%;
     height: 100vh;
     );
-
 }
 
 /*TYPOGRAPHY*/
 h1 {
-
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: normal;
+    color: #fff;
+    margin: 0;
 }
 
 h2 {
-
+    font-family: 'Inter', sans-serif;
+    font-weight: 250;
+    font-size: 16px;
+    line-height: normal;
+    color: #fff;
+    margin: 0;
 }
 
 h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: normal;
+    color: #36291C;
+    margin: 0;
+}
 
+h4{
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: normal;
+    color: #36291C;
+    margin: 0;
 }
 
 /***************/
 /*BUTTONS*/
 .login-button {
     background-color: #F14040;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
     border-radius: 15px;
-    border: none;
+}
+
+.login-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.yellow-button {
+    background-color: #f1de47;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.yellow-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
 }
 /***************/
 
@@ -38,3 +83,28 @@ h3 {
     background-color: rgba(248, 45, 45, 0.33);
 }
 /***************/
+
+/*SIDEBAR WORKER*/
+.sidebar{
+    background-color: rgba(248, 45, 45, 0.33);
+    border-radius: 15px;
+}
+/* Estilo de los puntos de color */
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Colores de estado */
+.green { background-color: green; }
+.red { background-color: red; }
+/***************/
+
+/*Reservation Table*/
+.reservation-table{
+    background-color: rgba(248, 255, 255, 0.59);
+    border-radius: 15px;
+}
