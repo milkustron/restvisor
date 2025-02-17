@@ -1,3 +1,12 @@
+.gradient-bg {
+    background: radial-gradient(circle,
+    #E6DDFF 0%,
+    #F3DEA5 43%,
+    #FFA454 70%,
+    #FF5741 100%
+    );
+
+}
 
 /*TYPOGRAPHY*/
 h1 {
@@ -18,5 +27,12 @@ h3 {
     background-color: #F14040;
     border-radius: 15px;
     border: none;
+}
+/***************/
+
+
+/*NAVBAR*/
+.navbar{
+    background-color: #F82D2D;
 }
 /***************/
