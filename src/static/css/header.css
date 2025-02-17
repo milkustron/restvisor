@@ -8,6 +8,9 @@
     height: 100vh;
     );
 }
+body.modal-open {
+    overflow: hidden !important;
+}
 
 /*TYPOGRAPHY*/
 h1 {
@@ -75,6 +78,24 @@ h4{
     background-color: #c0392b;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
 }
+
+.black-button {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.gray-button {
+    background-color: #6C757D;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
 /***************/
 
 
@@ -89,7 +110,7 @@ h4{
     background-color: rgba(248, 45, 45, 0.33);
     border-radius: 15px;
 }
-/* Estilo de los puntos de color */
+
 .dot {
     display: inline-block;
     width: 10px;
@@ -98,13 +119,30 @@ h4{
     margin-right: 10px;
 }
 
-/* Colores de estado */
+
 .green { background-color: green; }
 .red { background-color: red; }
+
 /***************/
 
-/*Reservation Table*/
+/*TABLES*/
 .reservation-table{
     background-color: rgba(248, 255, 255, 0.59);
     border-radius: 15px;
 }
+/***************/
+
+/*MODALS*/
+.modal-content {
+    background-color: #FE854C;
+    border:none;
+}
+
+.modal-header {
+    border:none;
+}
+
+.modal-footer {
+    border:none;
+}
+/***************/

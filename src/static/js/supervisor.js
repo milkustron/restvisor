@@ -11,5 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("navbar", "../templates/fragments/navbar.html");
     loadComponent("sidebar", "../templates/fragments/sidebar.html");
     loadComponent("reservations", "../templates/fragments/reservations.html");
-    loadComponent("confirmation-dialog", "../templates/fragments/confirmation-dialog.html");
+    loadComponent("confirmationModal", "../templates/fragments/modals/confirmation-modal.html");
+    loadComponent("cancellationModal", "../templates/fragments/modals/cancellation-modal.html");
 });
