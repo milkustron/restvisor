@@ -1,7 +1,7 @@
 .gradient-bg {
     background: radial-gradient(at bottom right,
-                rgba(238, 222, 179, 0.6),
-                rgba(255, 87, 65, 0.7)),
+                rgba(238, 222, 179, 0.92),
+                rgba(255, 87, 65, 0.92)),
             url('../images/background.png');
         background-size: cover;
         background-position: center;
