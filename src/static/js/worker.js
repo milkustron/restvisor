@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loadComponent("navbar", "../templates/fragments/navbar.html");
     loadComponent("sidebar", "../templates/fragments/sidebar.html");
-    loadComponent("reservations", "../templates/fragments/reservations.html");
-    loadComponent("confirmationModal", "../templates/fragments/modals/confirmation-modal.html");
-    loadComponent("cancellationModal", "../templates/fragments/modals/cancellation-modal.html");
-    loadComponent("addReservationModal", "../templates/fragments/modals/addreservation-modal.html");
+    loadComponent("shifts-table", "../templates/fragments/shifts-table.html");
+    loadComponent("worker-schedule", "../templates/fragments/worker-schedule.html");
 });
