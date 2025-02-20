@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error loading component:", error));
     }
 
-    loadComponent("navbar", "../templates/fragments/navbar.html");
+    loadComponent("navbarworker", "../templates/fragments/navbarworker.html");
     loadComponent("sidebar", "../templates/fragments/sidebar.html");
     loadComponent("shifts-table", "../templates/fragments/shifts-table.html");
     loadComponent("worker-schedule", "../templates/fragments/worker-schedule.html");
