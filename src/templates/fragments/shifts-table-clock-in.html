@@ -1,7 +1,14 @@
 <div class="reservation-table shadow">
     <div class="row">
         <div class="col-6 d-flex align-items-center justify-content-start px-4 py-1">
-            <h4 class="text-center">Shifts</h4>
+            <h4 class="text-center">Today's Reservations</h4>
+        </div>
+        <div class="col-4 d-flex align-items-center justify-content-end px-4 py-3">
+            <button id="clockInButton" class="btn login-button col-auto" data-bs-toggle="modal" data-bs-target="#addReservationModal" onclick="changeText()">Clock-In</button>
+            
+        </div>
+        <div class="col-2 d-flex align-items-center justify-content-end px-4 py-3">
+            <button class="btn login-button col-auto" data-bs-toggle="modal" data-bs-target="#addReservationModal">Download</button>
         </div>
     </div>
     <table class="w-100 text-center">
