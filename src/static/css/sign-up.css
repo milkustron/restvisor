@@ -1,0 +1,19 @@
+body {
+    background-color: #222; /* Fondo oscuro */
+}
+
+.bg-left {
+    background: linear-gradient(to right, #FF4E50, #FC913A);
+    text-align: center;
+}
+
+.card {
+    max-width: 900px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+}
