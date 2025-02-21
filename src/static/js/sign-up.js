@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     loadComponent("navbarworker", "../templates/fragments/navbarworker.html");
-    loadComponent("sidebar", "../templates/fragments/sidebar.html");
+    loadComponent("sign-up-form", "../templates/fragments/sign-up-form.html");
     loadComponent("shifts-table", "../templates/fragments/shifts-table.html");
     loadComponent("worker-schedule", "../templates/fragments/worker-schedule.html");
 });
