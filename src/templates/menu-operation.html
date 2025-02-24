@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>menu-operation</title>
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+    />
+    <!-- Tus estilos -->
+    <link rel="stylesheet" href="../static/css/header.css" />
+</head>
+<body class="gradient-bg">
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <!-- Logo e Identificador -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <!-- Ajusta la ruta de la imagen del logo -->
+            <img
+                    src="../static/images/logo.png"
+                    alt="Logo"
+                    style="width: 40px; margin-right: 10px;"
+            />
+            <h1>RestVisor</h1>
+        </a>
+        <!-- Sección derecha: fecha y botón logout -->
+        <div class="ms-auto d-flex align-items-center">
+            <h2 class="me-3">DD/MM/YYYY</h2>
+            <button class="login-button px-3 py-1">LOGOUT</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenedor principal -->
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <!-- Caja translúcida con la clase reservation-table -->
+            <div class="reservation-table p-4">
+                <!-- Encabezado de la tabla y botón "ADD TO MENU" -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3>OPERATION TABLE MENU</h3>
+                    <button class="yellow-button px-3 py-1">ADD TO MENU</button>
+                </div>
+
+                <!-- Tabla de Operaciones -->
+                <table class="table table-borderless align-middle text-center">
+                    <thead>
+                    <tr>
+                        <th>IMAGE</th>
+                        <th>NAME</th>
+                        <th>PRICE</th>
+                        <th>DESCRIPTION</th>
+                        <th>CATEGORY</th>
+                        <th>EDIT</th>
+                        <th>ELIMINATE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Ejemplo de fila. Repite o genera dinámicamente según necesites -->
+                    <tr>
+                        <!-- Ajusta la ruta de la imagen del plato -->
+                        <td>
+                            <img
+                                    src="../static/images/dish.jpg"
+                                    alt="Dish"
+                                    style="width: 50px; height: 50px; border-radius: 50%;"
+                            />
+                        </td>
+                        <td>Name</td>
+                        <td>Price</td>
+                        <td>Description</td>
+                        <td>Category</td>
+                        <!-- Ícono para Editar -->
+                        <td>
+                            <!-- Reemplaza con la ruta real de tu ícono o usa librerías de íconos -->
+                            <img
+                                    src="../static/images/edit-icon.png"
+                                    alt="Edit"
+                                    style="width: 24px; cursor: pointer;"
+                            />
+                        </td>
+                        <!-- Ícono para Eliminar -->
+                        <td>
+                            <img
+                                    src="../static/images/trash-icon.png"
+                                    alt="Eliminate"
+                                    style="width: 24px; cursor: pointer;"
+                            />
+                        </td>
+                    </tr>
+                    <!-- Más filas según necesites -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (opcional, si necesitas funcionalidad de Bootstrap) -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-BpQC7gF2KflYn1ItbhODiYnBFDcNaIYkS36DbpuWjDe8sh1h7Jp7n+Z6/w2ICn7d"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>
