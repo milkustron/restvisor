@@ -28,22 +28,22 @@ cd restvisor
 ```
 
 ## 2️⃣ **Estructura del Proyecto**
-El proyecto **RestVisor** está organizado de la siguiente manera:
-/restvisor
-│── /static
-│   ├── /css             # Archivos CSS personalizados
-│   │   ├── header.css   # Estilos para el header
-│   │   ├── modal.css    # Estilos para los modales
-│   ├── /js              # Archivos JavaScript
-│   │   ├── supervisor.js  # Lógica para supervisores
-│   ├── /assets          # Imágenes y recursos estáticos
-│── /components
-│   ├── navbar.html      # Barra de navegación
-│   ├── sidebar.html     # Barra lateral con trabajadores activos
-│   ├── reservations.html # Tabla de reservas
-│   ├── confirmation-modal.html  # Modal de confirmación de reservas
-│── index.html           # Página principal
-│── README.md            # Documentación del proyecto
+El proyecto **RestVisor** está organizado de la siguiente manera:  
+/restvisor  
+│── /static  
+│   ├── /css             # Archivos CSS personalizados  
+│   │   ├── header.css   # Estilos para el header  
+│   │   ├── modal.css    # Estilos para los modales  
+│   ├── /js              # Archivos JavaScript  
+│   │   ├── supervisor.js  # Lógica para supervisores  
+│   ├── /assets          # Imágenes y recursos estáticos  
+│── /components  
+│   ├── navbar.html      # Barra de navegación  
+│   ├── sidebar.html     # Barra lateral con trabajadores activos  
+│   ├── reservations.html # Tabla de reservas  
+│   ├── confirmation-modal.html  # Modal de confirmación de reservas  
+│── index.html           # Página principal  
+│── README.md            # Documentación del proyecto  
 
 ---
 
