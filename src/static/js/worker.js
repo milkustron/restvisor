@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     loadComponent("navbarworker", "../templates/fragments/navbarworker.html");
-    loadComponent("sidebar", "../templates/fragments/sidebar.html");
     loadComponent("shifts-table", "../templates/fragments/shifts-table-clock-in.html");
     loadComponent("worker-schedule", "../templates/fragments/worker-schedule.html");
 });
