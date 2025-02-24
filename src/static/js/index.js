@@ -8,5 +8,5 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error loading component:", error));
     }
 
-    loadComponent("navbar", "../templates/fragments/navbar.html");
+    loadComponent("navbar-nologged", "../templates/fragments/navbar-nologged.html");
 });

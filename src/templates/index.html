@@ -10,26 +10,30 @@
 <body class="gradient-bg">
 
 <!-- Cargar componentes -->
-<div id="navbar"></div>
+<div id="navbar-nologged"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-6 p-3 d-flex align-items-center justify-content-center">
-            <div class="reservation-table p-4">
-                <h1>Restaurant management wasn’t easier!</h1>
+            <div class="reservation-table p-4" style="min-height: 30vh">
+                <h1 style="color: #FD493B">Restaurant management wasn’t easier!</h1>
                 <br>
                 <h4>At RestVisor, we understand that speed and real-time oversight are crucial in restaurant management.</h4>
                 <br>
                 <h4>That’s why we’ve created a comprehensive tool that brings together all the key information you need. Easily manage upcoming reservations on the customer side while keeping track of your staff, viewing their work history and monitoring on-duty employees in real-time.</h4>
                 <br>
-                <h3>Streamline your operations, and enhance supervisor efficiency with RestVisor!</h3>
+                <h4 style="font-weight: bold">Streamline your operations, and enhance supervisor efficiency with RestVisor!</h4>
+                <br>
+                <div class="row d-flex justify-content-center align-items-center">
+                <button class="btn login-button col-auto" onclick="window.location.href='./sign-up.html'">SIGN UP AND SEE MORE!</button>
+                </div>
             </div>
         </div>
-        <div class="col-6 flex-column justify-content-center align-items-center">
-            <div class="col-12 p-3 d-flex justify-content-center align-items-center">
-                <img src="../static/images/supervisor-mockup.png" alt="Supervisor mockup" style="height: 200px; width: 293px">
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-8 p-3 d-flex justify-content-center align-items-center">
+                <img src="../static/images/supervisor-mockup.png" alt="Supervisor mockup" class="img-fluid">
             </div>
-            <div class="col-12 p-3 d-flex justify-content-center align-items-center">
-                <img src="../static/images/worker-mockup.png" alt="Worker mockup" style="height: 200px; width: 293px">
+            <div class="col-8 p-3 d-flex justify-content-center align-items-center">
+                <img src="../static/images/worker-mockup.png" alt="Worker mockup" class="img-fluid">
             </div>
         </div>
     </div>
