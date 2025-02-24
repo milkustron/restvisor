@@ -47,33 +47,9 @@ El proyecto **RestVisor** está organizado de la siguiente manera:
 
 ---
 
-## 3️⃣ **Ejecutar el Proyecto**
-Puedes abrir `index.html` directamente en tu navegador o utilizar un servidor local:
+## **Ejecutar el Proyecto**
 
-### 📌 **Opción 1: Abrir manualmente**
-- Solo abre `index.html` en cualquier navegador moderno.
-
-### 📌 **Opción 2: Usar un servidor local (Recomendado)**
-Si tienes **Python instalado**, ejecuta este comando en la terminal dentro del proyecto:
-
-```sh
-python -m http.server 8000
-```
-Luego, abre tu navegador y accede a la siguiente dirección:
-
-🔗 **[http://localhost:8000](http://localhost:8000)**
-
-Si prefieres una alternativa más rápida y sin necesidad de terminal, puedes utilizar **Live Server** en **VS Code**:
-
-### 📌 **Ejecutar con Live Server en VS Code**
-1. Instala la extensión **Live Server** desde el marketplace de VS Code.
-2. Abre el proyecto en VS Code.
-3. Haz clic derecho en `index.html` y selecciona **"Open with Live Server"**.
-4. El navegador se abrirá automáticamente mostrando la aplicación.
-
-Ambas opciones te permitirán visualizar y probar la aplicación de manera local antes de desplegarla en un servidor real.
-
-## 4️⃣ **Uso de la Aplicación**
+## 3️⃣ **Uso de la Aplicación**
 La aplicación **RestVisor** permite a los supervisores gestionar las reservas del restaurante de manera eficiente. Aquí tienes un resumen de su funcionamiento:
 
 1. **Inicio**
@@ -90,7 +66,7 @@ La aplicación **RestVisor** permite a los supervisores gestionar las reservas d
 
 ---
 
-## 5️⃣ 📌 **Capturas de Pantalla**
+## 4️⃣ 📌 **Capturas de Pantalla**
 A continuación, se presentan algunas imágenes de la aplicación:
 
 | **Dashboard Principal** | **Modal de Confirmación** |
@@ -99,7 +75,7 @@ A continuación, se presentan algunas imágenes de la aplicación:
 
 ---
 
-## 6️⃣ **📌 Próximas Mejoras**
+## 5️⃣ **📌 Próximas Mejoras**
 Se están planeando las siguientes mejoras para futuras versiones:
 
 - ✅ **Implementar una base de datos** para que las reservas sean persistentes.
@@ -109,7 +85,7 @@ Se están planeando las siguientes mejoras para futuras versiones:
 
 ---
 
-## 7️⃣ **🤝 Contribución**
+## 6️⃣**🤝 Contribución**
 ¡Toda ayuda es bienvenida! Si quieres colaborar en el desarrollo de **RestVisor**, sigue estos pasos:
 
 1. Haz un **fork** del repositorio.
