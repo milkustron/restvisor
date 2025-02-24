@@ -13,3 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("shifts-table", "../templates/fragments/shifts-table-clock-in.html");
     loadComponent("worker-schedule", "../templates/fragments/worker-schedule.html");
 });
+
+function changeText() {
+    let button = document.getElementById("clockInButton");
+    button.textContent = button.textContent === "Clock-In" ? "Clock-Out" : "Clock-In";
+}
