@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error cargando el componente:", error));
     }
 
-    loadComponent("navbar", "../templates/fragments/navbar.html");
+    loadComponent("navbarmenu", "../templates/fragments/navbaroperationmenu.html");
     loadComponent("data-table", "../templates/fragments/menu-table.html");
-    loadComponent("addNewModal", "../templates/fragments/modals/add_new_modal.html");
+    loadComponent("addNewModal", "../templates/fragments/modals/add_new_modal.html"); //se abrira cuando haga click en un boton
 });
