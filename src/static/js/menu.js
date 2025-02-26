@@ -10,5 +10,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     loadComponent("navbarmenu", "../templates/fragments/navbaroperationmenu.html");
     loadComponent("data-table", "../templates/fragments/menu-table.html");
-    loadComponent("addNewModal", "../templates/fragments/modals/add_new_modal.html"); //se abrira cuando haga click en un boton
+    loadComponent("eliminationModal", "../templates/fragments/modals/elimination-modal.html");
 });
