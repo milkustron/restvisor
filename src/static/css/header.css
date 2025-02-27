@@ -2,7 +2,7 @@
     background: radial-gradient(at bottom right,
                 rgba(238, 222, 179, 0.92),
                 rgba(255, 87, 65, 0.92)),
-            url('../images/background.png');
+            url('../static/images/background.png');
         background-size: cover;
         background-position: center;
         width: 100%;
@@ -11,6 +11,8 @@
 body.modal-open {
     overflow: hidden !important;
 }
+
+
 
 /*TYPOGRAPHY*/
 h1 {
@@ -42,11 +44,21 @@ h3 {
 
 h4{
     font-family: 'Inter', sans-serif;
-    font-weight: 200;
+    font-weight: 330;
     font-size: 16px;
     line-height: normal;
     color: #36291C;
     margin: 0;
+}
+
+h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 350;
+    font-size: 40px;
+    line-height: normal;
+    color: #FD493B;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 /***************/
@@ -61,6 +73,20 @@ h4{
 }
 
 .login-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.signup-button {
+    background-color: white;
+    color: #F14040;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.signup-button:hover {
     background-color: #c0392b;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
 }
@@ -110,7 +136,7 @@ h4{
 
 /*NAVBAR*/
 .navbar{
-    background-color: rgba(248, 45, 45, 0.33);
+    background-color: rgba(248, 45, 45, 0.6);
 }
 /***************/
 
@@ -141,7 +167,39 @@ h4{
 }
 /***************/
 
+/*MAIN VIEW*/
+.main-contrainer {
+    background-color: rgba(248, 255, 255, 0.59);
+    border-radius: 15px;
+    width: 80vw;
+    max-width: 520px;
+    height: auto;
+    padding: 5vw;
+    text-align: justify;
+}
+
+.main-contrainer h5 {
+    margin-top: 30px;
+}
+
+.button-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.mockup {
+    width: 50vw;
+    max-width: 530px;
+    height: auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+/***************/
+
+
 /*MODALS*/
+
 .modal-content {
     background-color: #FE854C;
     border:none;
@@ -154,4 +212,21 @@ h4{
 .modal-footer {
     border:none;
 }
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.modal-body label {
+    font-size: 16px;
+    color: white;
+}
+
+.modal-body input {
+    padding: 10px;
+    font-size: 16px;
+}
+
 /***************/
