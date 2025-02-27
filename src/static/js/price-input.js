@@ -3,12 +3,12 @@ function initPriceInput() {
     if (!priceInput) return;
 
     priceInput.addEventListener("input", function () {
-        let value = this.value.replace(/[^0-9]/g, ''); // Permitir solo números
+        let value = this.value.replace(/[^0-9]/g, '');
 
         if (value.length > 0) {
-            this.value = value + "$"; // Añadir el $ detras del número
+            this.value = value + "$";
         } else {
-            this.value = ""; // Si está vacío, no poner el $
+            this.value = "";
         }
     });
 
