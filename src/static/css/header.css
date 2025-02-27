@@ -2,7 +2,7 @@
     background: radial-gradient(at bottom right,
                 rgba(238, 222, 179, 0.92),
                 rgba(255, 87, 65, 0.92)),
-            url('../static/images/background.png');
+            url('../images/background.png');
         background-size: cover;
         background-position: center;
         width: 100%;
