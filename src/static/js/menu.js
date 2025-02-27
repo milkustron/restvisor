@@ -34,4 +34,5 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("data-table", "../templates/fragments/menu-table.html");
     loadComponent("eliminationModal", "../templates/fragments/modals/elimination-modal.html");
     loadComponent("editModal", "../templates/fragments/modals/editmenu-modal.html");
+    loadComponent("cards", "../templates/fragments/menu-cards.html");
 });
