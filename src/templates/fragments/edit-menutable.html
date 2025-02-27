@@ -8,32 +8,43 @@
     <div class="row">
         <div class="col-md-4 d-flex flex-column align-items-center">
             <h3 class="fw-bold text-dark mb-3">Select image</h3>
-
-            <div class="d-flex justify-content-center align-items-center rounded shadow-sm"
-                 style="background-color: #D3D3D3; width: 100%; max-width: 250px; height: 180px;">
+            <input type="file" id="fileInput" class="d-none">
+            <div id="fileUploadBox" class="d-flex justify-content-center align-items-center rounded shadow-sm"
+                 style="background-color: #D3D3D3; width: 100%; max-width: 250px; height: 180px; cursor: pointer;">
                 <span class="fw-bold text-dark">Search file</span>
             </div>
         </div>
-
-
         <div class="col-md-8">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <h3 class="fw-bold text-dark">Name</h3>
                     <input type="text" class="form-control rounded-pill bg-light shadow-sm" placeholder="Set name">
                 </div>
-                <!-- Precio -->
                 <div class="col-md-6">
                     <h3 class="fw-bold text-dark">PRICE</h3>
-                    <input type="text" class="form-control rounded-pill bg-light shadow-sm" placeholder="Set price">
+                    <input type="text" id="price" class="form-control rounded-pill bg-light shadow-sm"
+                           placeholder="Set price" inputmode="numeric" pattern="[0-9]*">
                 </div>
             </div>
 
-            <div class="row mt-3">
-                <!-- Categoría -->
-                <div class="col-md-12">
+            <div class="row mt-5">
+                <div class="col-md-11">
                     <h3 class="fw-bold text-dark">Category</h3>
-                    <input type="text" class="form-control rounded-pill bg-light shadow-sm" placeholder="Set category">
+
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle w-100 rounded-pill shadow-sm"
+                                type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select category
+                        </button>
+
+                        <ul class="dropdown-menu w-100 text-center" aria-labelledby="categoryDropdown">
+                            <li><a class="dropdown-item" href="#" data-value="Starter">Starter</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Main Course">Main Course</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Side Dish">Side Dish</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Dessert">Dessert</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Drink">Drink</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +52,7 @@
 
     <!-- DESCRIPCIÓN -->
     <div class="row mt-4">
-        <div class="col-12">
+        <div class="col-10 mx-auto">
             <h3 class="fw-bold text-dark">Description</h3>
             <textarea class="form-control bg-light shadow-sm" placeholder="Set description" rows="3"></textarea>
         </div>
@@ -50,7 +61,7 @@
     <!-- BOTÓN GUARDAR -->
     <div class="row mt-4">
         <div class="col-12 d-flex justify-content-end">
-            <button class="btn yellow-button shadow-sm px-4 py-2 fw-bold">Save Changes</button>
-        </div>
+            <a href="menu-operation.html" class="btn yellow-button shadow-sm px-4 py-2 fw-bold mb-4 me-4">Save Changes</a>        </div>
     </div>
 </div>
+
