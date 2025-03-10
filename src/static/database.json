@@ -6,12 +6,30 @@
     "dia": "Lunes"
   },
   "fragments": [
-    { "id": "navbar", "url": "../templates/fragments/navbar.html" },
-    { "id": "sidebar", "url": "../templates/fragments/sidebar.html" },
-    { "id": "reservations", "url": "../templates/fragments/reservations.html" },
-    { "id": "confirmationModal", "url": "../templates/fragments/modals/confirmation-modal.html" },
-    { "id": "cancellationModal", "url": "../templates/fragments/modals/cancellation-modal.html" },
-    { "id": "addReservationModal", "url": "../templates/fragments/modals/addreservation-modal.html" }
+    {
+      "id": "navbar",
+      "url": "../templates/fragments/navbar.html"
+    },
+    {
+      "id": "sidebar",
+      "url": "../templates/fragments/sidebar.html"
+    },
+    {
+      "id": "reservations",
+      "url": "../templates/fragments/reservations.html"
+    },
+    {
+      "id": "confirmationModal",
+      "url": "../templates/fragments/modals/confirmation-modal.html"
+    },
+    {
+      "id": "cancellationModal",
+      "url": "../templates/fragments/modals/cancellation-modal.html"
+    },
+    {
+      "id": "addReservationModal",
+      "url": "../templates/fragments/modals/addreservation-modal.html"
+    }
   ],
   "reservations": [
     {
@@ -19,38 +37,70 @@
       "phone": "+99 123 45 67 89",
       "time": "19:30",
       "guests": 4,
-      "state": "Pending"
+      "state": "Pending",
+      "id": "3d40"
     },
     {
       "name": "Jane Smith",
       "phone": "+99 987 65 43 21",
       "time": "20:00",
       "guests": 2,
-      "state": "Confirmed"
+      "state": "Confirmed",
+      "id": "1d22"
     },
     {
       "name": "Alice Johnson",
       "phone": "+99 555 22 11 33",
       "time": "21:15",
       "guests": 5,
-      "state": "Cancelled"
+      "state": "Cancelled",
+      "id": "fec2"
+    },
+    {
+      "id": "61f4",
+      "name": "asdfasd",
+      "phone": "3242342332",
+      "guests": 2,
+      "state": "Pending"
     }
   ],
-
   "sidebar": {
     "titulo": "Active workers today",
     "workers": [
-      { "name": "John Doe", "status": "green" },
-      { "name": "Jane Smith", "status": "green" },
-      { "name": "Alice Johnson", "status": "green" },
-      { "name": "Bob Brown", "status": "green" },
-      { "name": "Charlie White", "status": "green" },
-      { "name": "Daniel Black", "status": "red" },
-      { "name": "Emma Blue", "status": "red" },
-      { "name": "Frank Yellow", "status": "red" }
+      {
+        "name": "John Doe",
+        "status": "green"
+      },
+      {
+        "name": "Jane Smith",
+        "status": "green"
+      },
+      {
+        "name": "Alice Johnson",
+        "status": "green"
+      },
+      {
+        "name": "Bob Brown",
+        "status": "green"
+      },
+      {
+        "name": "Charlie White",
+        "status": "green"
+      },
+      {
+        "name": "Daniel Black",
+        "status": "red"
+      },
+      {
+        "name": "Emma Blue",
+        "status": "red"
+      },
+      {
+        "name": "Frank Yellow",
+        "status": "red"
+      }
     ]
   },
-
   "modals": {
     "confirmation": {
       "title": "Confirmation",

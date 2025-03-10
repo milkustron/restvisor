@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const data = await loadJSON("../static/database.json");
 
         loadPageContent(data);
-        loadReservations(data);
+        loadReservationsFromServer();
         loadSidebar(data);
         loadConfirmationModal(data);
         loadCancellationModal(data);
@@ -55,32 +55,37 @@ function loadPageContent(data) {
     console.log("Datos JSON cargados correctamente.");
 }
 
-function loadReservations(data) {
-    const reservationsBody = document.getElementById("reservations-body");
-    if (!reservationsBody) {
-        console.warn("No se encontró el contenedor de reservas.");
-        return;
+async function loadReservationsFromServer() {
+    try {
+        const response = await fetch("http://localhost:3000/reservations");
+        if (!response.ok) throw new Error(`Error al cargar reservas: ${response.status}`);
+        const reservations = await response.json();
+
+        const reservationsBody = document.getElementById("reservations-body");
+        reservationsBody.innerHTML = "";
+
+        reservations.forEach(reservation => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${reservation.name}</td>
+                <td>${reservation.phone}</td>
+                <td>${reservation.time}</td>
+                <td>${reservation.guests}</td>
+                <td>${reservation.state}</td>
+                <td>
+                    <button class="btn confirm-btn" data-bs-toggle="modal" data-bs-target="#confirmationModal">✔</button>
+                    <button class="btn confirm-btn" data-bs-toggle="modal" data-bs-target="#cancellationModal">✘</button>
+                </td>
+            `;
+            reservationsBody.appendChild(row);
+        });
+
+        console.log("Tabla de reservas actualizada desde JSON-Server.");
+    } catch (error) {
+        console.error("Error al cargar las reservas:", error);
     }
-
-    reservationsBody.innerHTML = "";
-    data.reservations.forEach(reservation => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${reservation.name}</td>
-            <td>${reservation.phone}</td>
-            <td>${reservation.time}</td>
-            <td>${reservation.guests}</td>
-            <td>${reservation.state}</td>
-            <td>
-                <button class="btn confirm-btn" data-bs-toggle="modal" data-bs-target="#confirmationModal">✔</button>
-                <button class="btn confirm-btn" data-bs-toggle="modal" data-bs-target="#cancellationModal">✘</button>
-            </td>
-        `;
-        reservationsBody.appendChild(row);
-    });
-
-    console.log("Reservas cargadas correctamente.");
 }
+
 
 function loadSidebar(data) {
     document.getElementById("workers-title").textContent = data.sidebar.titulo;
@@ -150,15 +155,48 @@ function setupReservationForm() {
         return;
     }
 
-    addButton.addEventListener("click", function (event) {
+    addButton.addEventListener("click", async function (event) {
         if (!form.checkValidity()) {
             event.preventDefault();
             event.stopPropagation();
             form.classList.add("was-validated");
         } else {
-            alert("Reservation successfully added!");
+            event.preventDefault();
+
+            const newReservation = {
+                name: document.getElementById("name").value,
+                phone: document.getElementById("phone").value,
+                time: document.getElementById("date").value,
+                guests: parseInt(document.getElementById("number").value),
+                state: "Pending"
+            };
+
+            await addReservationToJSONServer(newReservation);
+
+            form.reset();
+            document.querySelector("#addReservationModal .btn-close").click();
         }
     });
 
-    console.log("Eventos de validación de formulario agregados correctamente.");
+    console.log("Eventos de validación y almacenamiento del formulario agregados correctamente.");
+}
+
+
+async function addReservationToJSONServer(newReservation) {
+    try {
+        const response = await fetch("http://localhost:3000/reservations", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newReservation)
+        });
+
+        if (!response.ok) throw new Error(`Error al añadir la reserva: ${response.status}`);
+
+        console.log("Reserva añadida correctamente.");
+        loadReservationsFromServer();
+    } catch (error) {
+        console.error("Error al enviar la reserva al JSON-Server:", error);
+    }
 }
