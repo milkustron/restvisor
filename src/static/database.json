@@ -1,0 +1,84 @@
+{
+  "sitio": {
+    "nombre_restaurante": "Restvisor",
+    "posicion": "Supervisor",
+    "fecha": "10/03/2025",
+    "dia": "Lunes"
+  },
+  "fragments": [
+    { "id": "navbar", "url": "../templates/fragments/navbar.html" },
+    { "id": "sidebar", "url": "../templates/fragments/sidebar.html" },
+    { "id": "reservations", "url": "../templates/fragments/reservations.html" },
+    { "id": "confirmationModal", "url": "../templates/fragments/modals/confirmation-modal.html" },
+    { "id": "cancellationModal", "url": "../templates/fragments/modals/cancellation-modal.html" },
+    { "id": "addReservationModal", "url": "../templates/fragments/modals/addreservation-modal.html" }
+  ],
+  "reservations": [
+    {
+      "name": "John Doe",
+      "phone": "+99 123 45 67 89",
+      "time": "19:30",
+      "guests": 4,
+      "state": "Pending"
+    },
+    {
+      "name": "Jane Smith",
+      "phone": "+99 987 65 43 21",
+      "time": "20:00",
+      "guests": 2,
+      "state": "Confirmed"
+    },
+    {
+      "name": "Alice Johnson",
+      "phone": "+99 555 22 11 33",
+      "time": "21:15",
+      "guests": 5,
+      "state": "Cancelled"
+    }
+  ],
+
+  "sidebar": {
+    "titulo": "Active workers today",
+    "workers": [
+      { "name": "John Doe", "status": "green" },
+      { "name": "Jane Smith", "status": "green" },
+      { "name": "Alice Johnson", "status": "green" },
+      { "name": "Bob Brown", "status": "green" },
+      { "name": "Charlie White", "status": "green" },
+      { "name": "Daniel Black", "status": "red" },
+      { "name": "Emma Blue", "status": "red" },
+      { "name": "Frank Yellow", "status": "red" }
+    ]
+  },
+
+  "modals": {
+    "confirmation": {
+      "title": "Confirmation",
+      "message": "Are you sure you want to accept the reservation?",
+      "buttons": {
+        "no": "No",
+        "yes": "Yes"
+      }
+    },
+    "cancellation": {
+      "title": "Confirmation",
+      "message": "Are you sure you want to cancel the reservation?",
+      "buttons": {
+        "no": "No",
+        "yes": "Yes"
+      }
+    },
+    "addReservation": {
+      "title": "Add New Reservation",
+      "labels": {
+        "name": "Name",
+        "date": "Date",
+        "phone": "Phone Number",
+        "number": "Number of people"
+      },
+      "buttons": {
+        "add": "Add"
+      }
+    }
+  }
+}
