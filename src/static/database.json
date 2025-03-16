@@ -959,5 +959,50 @@
       "business_description": "Fitness and personal training",
       "user_id": 24
     }
+  ],
+  
+  "worker_schedule": [
+    {
+      "id": 1,
+      "day": "Monday",
+      "start": "9:00",
+      "finish": "18:00"
+    },
+    {
+      "id": 2,
+      "day": "Tuesday",
+      "start": "9:00",
+      "finish": "18:00"
+    },
+    {
+      "id": 3,
+      "day": "Wednesday",
+      "start": "9:00",
+      "finish": "18:00"
+    },
+    {
+      "id": 4,
+      "day": "Thursday",
+      "start": "9:00",
+      "finish": "18:00"
+    },
+    {
+      "id": 5,
+      "day": "Friday",
+      "start": "9:00",
+      "finish": "18:00"
+    },
+    {
+      "id": 6,
+      "day": "Saturday",
+      "start": "9:00",
+      "finish": "18:00"
+    },
+    {
+      "id": 7,
+      "day": "Sunday",
+      "start": "9:00",
+      "finish": "18:00"
+    }
   ]
 }
