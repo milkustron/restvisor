@@ -12,11 +12,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         console.log("Todos los fragmentos se han cargado correctamente.");
 
-        // Cargamos el contenido de la página (incluyendo date y hour)
         loadPageContent(data);
 
-        // Renderizamos la tabla de turnos para el trabajador con id 1
         renderShiftsTable(data);
+
+        renderWorkerSchedule(data);
+
     } catch (error) {
         console.error("Error durante la carga de la página:", error);
     }
@@ -40,8 +41,8 @@ async function loadJSON(url) {
 
 function loadPageContent(data) {
     const elements = {
-        "date": data.sitio.fecha,    
-        "weekDay": data.sitio.dia,        
+        "date": data.sitio.fecha,
+        "weekDay": data.sitio.dia,
     };
 
     Object.entries(elements).forEach(([id, text]) => {
@@ -55,10 +56,10 @@ function loadPageContent(data) {
 function renderShiftsTable(data) {
     const table = document.getElementById('shifts-table');
     const tbody = table.querySelector('tbody');
-
+    
     tbody.innerHTML = '';
-    // Se asume que se renderiza la información del trabajador con id 1
-    const worker = data.workers.find(worker => worker.id === 1);
+    // Tomamos el trabajador con id = 1 como ejemplo
+    const worker = data.workers.find(w => w.id === 1);
 
     if (worker) {
         worker.worker_hours.forEach(shift => {
@@ -76,7 +77,22 @@ function renderShiftsTable(data) {
     }
 }
 
+function renderWorkerSchedule(data) {
+    const scheduleContainer = document.getElementById("worker-schedule");
+    if (!scheduleContainer) return;
+
+    let scheduleHTML = `<h2 class="text-center text-dark">Worker Schedule</h2>`;
+    scheduleHTML += `<br>`;
+
+    data.worker_schedule.forEach(item => {
+        scheduleHTML += `<h2 class="text-center text-dark">${item.day}: ${item.start}-${item.finish}</h2>`;
+        scheduleHTML += `<br>`;
+    });
+
+    scheduleContainer.innerHTML = scheduleHTML;
+}
+
 function changeText() {
-    const button = document.getElementById("clockInButton");
+    let button = document.getElementById("clockInButton");
     button.textContent = button.textContent === "Clock-In" ? "Clock-Out" : "Clock-In";
 }
