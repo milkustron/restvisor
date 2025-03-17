@@ -6,14 +6,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         console.log("Todos los fragmentos se han cargado correctamente.");
 
-        const data = await loadJSON("../static/database.json");
-
-        loadPageContent(data);
+        loadPageContent(config);
         loadReservationsFromServer();
-        loadSidebar(data);
-        loadConfirmationModal(data);
-        loadCancellationModal(data);
-        loadAddReservationModal(data);
+        loadSidebar(config);
+        loadConfirmationModal(config);
+        loadCancellationModal(config);
+        loadAddReservationModal(config);
 
         setupReservationForm();
 
@@ -38,13 +36,13 @@ async function loadJSON(url) {
     return response.json();
 }
 
-function loadPageContent(data) {
+function loadPageContent(config) {
     const elements = {
-        "restaurant-name": data.sitio.nombre_restaurante,
-        "position": data.sitio.posicion,
-        "date": data.sitio.fecha,
-        "hour": data.sitio.dia,
-        "reservations-title": data.sitio.titulo_reservas
+        "restaurant-name": config.sitio.nombre_restaurante,
+        "position": config.sitio.posicion,
+        "date": config.sitio.fecha,
+        "hour": config.sitio.dia,
+        "reservations-title": config.sitio.titulo_reservas
     };
 
     Object.entries(elements).forEach(([id, text]) => {
@@ -87,13 +85,13 @@ async function loadReservationsFromServer() {
 }
 
 
-function loadSidebar(data) {
-    document.getElementById("workers-title").textContent = data.sidebar.titulo;
+function loadSidebar(config) {
+    document.getElementById("workers-title").textContent = config.sidebar.titulo;
 
     const workersList = document.getElementById("workers-list");
     workersList.innerHTML = "";
 
-    data.sidebar.workers.forEach(worker => {
+    config.sidebar.workers.forEach(worker => {
         const listItem = document.createElement("li");
         listItem.innerHTML = `<span class="dot ${worker.status}"></span> ${worker.name}`;
         workersList.appendChild(listItem);
@@ -102,46 +100,46 @@ function loadSidebar(data) {
     console.log("Trabajadores activos cargados correctamente.");
 }
 
-function loadConfirmationModal(data) {
+function loadConfirmationModal(config) {
     if (!document.getElementById("confirmation-modal-title")) {
         console.warn("El modal de confirmación no está presente en el DOM.");
         return;
     }
 
-    document.getElementById("confirmation-modal-title").textContent = data.modals.confirmation.title;
-    document.getElementById("confirmation-modal-message").textContent = data.modals.confirmation.message;
-    document.getElementById("confirmation-modal-no").textContent = data.modals.confirmation.buttons.no;
-    document.getElementById("confirmation-modal-yes").textContent = data.modals.confirmation.buttons.yes;
+    document.getElementById("confirmation-modal-title").textContent = config.modals.confirmation.title;
+    document.getElementById("confirmation-modal-message").textContent = config.modals.confirmation.message;
+    document.getElementById("confirmation-modal-no").textContent = config.modals.confirmation.buttons.no;
+    document.getElementById("confirmation-modal-yes").textContent = config.modals.confirmation.buttons.yes;
 
     console.log("Modal de confirmación cargado correctamente.");
 }
 
-function loadCancellationModal(data) {
+function loadCancellationModal(config) {
     if (!document.getElementById("cancellation-modal-title")) {
         console.warn("El modal de cancelación no está presente en el DOM.");
         return;
     }
 
-    document.getElementById("cancellation-modal-title").textContent = data.modals.cancellation.title;
-    document.getElementById("cancellation-modal-message").textContent = data.modals.cancellation.message;
-    document.getElementById("cancellation-modal-no").textContent = data.modals.cancellation.buttons.no;
-    document.getElementById("cancellation-modal-yes").textContent = data.modals.cancellation.buttons.yes;
+    document.getElementById("cancellation-modal-title").textContent = config.modals.cancellation.title;
+    document.getElementById("cancellation-modal-message").textContent = config.modals.cancellation.message;
+    document.getElementById("cancellation-modal-no").textContent = config.modals.cancellation.buttons.no;
+    document.getElementById("cancellation-modal-yes").textContent = config.modals.cancellation.buttons.yes;
 
     console.log("Modal de cancelación cargado correctamente.");
 }
 
-function loadAddReservationModal(data) {
+function loadAddReservationModal(config) {
     if (!document.getElementById("add-reservation-modal-title")) {
         console.warn("El modal de nueva reserva no está presente en el DOM.");
         return;
     }
 
-    document.getElementById("add-reservation-modal-title").textContent = data.modals.addReservation.title;
-    document.getElementById("label-name").textContent = data.modals.addReservation.labels.name;
-    document.getElementById("label-date").textContent = data.modals.addReservation.labels.date;
-    document.getElementById("label-phone").textContent = data.modals.addReservation.labels.phone;
-    document.getElementById("label-number").textContent = data.modals.addReservation.labels.number;
-    document.getElementById("add-reservation-button").textContent = data.modals.addReservation.buttons.add;
+    document.getElementById("add-reservation-modal-title").textContent = config.modals.addReservation.title;
+    document.getElementById("label-name").textContent = config.modals.addReservation.labels.name;
+    document.getElementById("label-date").textContent = config.modals.addReservation.labels.date;
+    document.getElementById("label-phone").textContent = config.modals.addReservation.labels.phone;
+    document.getElementById("label-number").textContent = config.modals.addReservation.labels.number;
+    document.getElementById("add-reservation-button").textContent = config.modals.addReservation.buttons.add;
 
     console.log("Modal de añadir reserva cargado correctamente.");
 }
