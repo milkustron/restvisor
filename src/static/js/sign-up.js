@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.text())
             .then(data => {
                 document.getElementById(id).innerHTML = data;
-                if (callback) callback();
+                if (callback) callback(); // Llamamos al callback después de cargar el componente
             })
             .catch(error => console.error("Error loading component:", error));
     }
@@ -16,13 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("navbarworker", "../templates/fragments/navbarworker.html");
 
     loadComponent("sign-up-form", "../templates/fragments/sign-up-form.html", function () {
-        
+        // Ahora que el formulario se ha cargado, podemos obtener los elementos
         const password = document.getElementById("password");
         const zipcode = document.getElementById("zip");
 
         const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/;
         const postalCodeRegex = /^\d{5}$/;
-        
 
         password.addEventListener("input", function () {
             if (!validarTexto(password.value, passwordRegex)) {
