@@ -48,16 +48,18 @@
             <label class="form-check-label" for="customer">Customer</label>
         </div>
     </div>
-    <div class="row mb-3">
-        <div class="col-8">
-            <input type="text" id="businessName" class="form-control" placeholder="Business Name">
+    <div id="business-options">
+        <div class="row mb-3">
+            <div class="col-8">
+                <input type="text" id="businessName" class="form-control" placeholder="Business Name">
+            </div>
+            <div class="col-4">
+                <input type="text" id="cif" class="form-control" placeholder="CIF" required>
+            </div>
         </div>
-        <div class="col-4">
-            <input type="text" id="cif" class="form-control" placeholder="CIF">
+        <div class="mb-3">
+            <textarea id="businessDesc" class="form-control" rows="3" placeholder="Business Description"></textarea>
         </div>
-    </div>
-    <div class="mb-3">
-        <textarea id="businessDesc" class="form-control" rows="3" placeholder="Business Description"></textarea>
     </div>
     <div class="mb-3 form-check">
         <input type="checkbox" id="terms" class="form-check-input" required>

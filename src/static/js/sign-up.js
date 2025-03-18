@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.text())
             .then(data => {
                 document.getElementById(id).innerHTML = data;
-                if (callback) callback(); // Llamamos al callback después de cargar el componente
+                if (callback) callback();
             })
             .catch(error => console.error("Error loading component:", error));
     }
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("navbarworker", "../templates/fragments/navbarworker.html");
 
     loadComponent("sign-up-form", "../templates/fragments/sign-up-form.html", function () {
-        // Ahora que el formulario se ha cargado, podemos obtener los elementos
         const password = document.getElementById("password");
         const zipcode = document.getElementById("zip");
 
@@ -38,5 +37,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 zipcode.setCustomValidity("");
             }
         });
+
+        const supervisorRadio = document.getElementById('supervisor');
+        const customerRadio = document.getElementById('customer');
+        const businessOptionDiv = document.getElementById('business-options');
+
+        function toggleBusinessOption() {
+            if (customerRadio.checked) {
+                businessOptionDiv.style.display = 'none';
+            } else {
+                businessOptionDiv.style.display = 'block';
+            }
+        }
+
+        supervisorRadio.addEventListener('change', toggleBusinessOption);
+        customerRadio.addEventListener('change', toggleBusinessOption);
+
+        toggleBusinessOption(); 
     });
 });
