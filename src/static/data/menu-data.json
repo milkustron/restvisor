@@ -1,0 +1,54 @@
+{
+  "menuItems": [
+    {
+      "id": 1,
+      "name": "Pizza Margherita",
+      "price": "12$",
+      "description": "Classic cheese pizza with fresh basil and mozzarella.",
+      "category": "Main Course",
+      "image": "../static/images/dish.png"
+    },
+    {
+      "id": 2,
+      "name": "Spaghetti Bolognese",
+      "price": "10$",
+      "description": "Traditional spaghetti with meat sauce.",
+      "category": "Main Course",
+      "image": "../static/images/dish.png"
+    },
+    {
+      "id": 3,
+      "name": "Caesar Salad",
+      "price": "8$",
+      "description": "Crisp romaine lettuce, croutons, and Caesar dressing.",
+      "category": "Salad",
+      "image": "../static/images/dish.png"
+    },
+    {
+      "id": 4,
+      "name": "Caesar Salad",
+      "price": "8$",
+      "description": "Crisp romaine lettuce, croutons, and Caesar dressing.",
+      "category": "Salad",
+      "image": "../static/images/dish.png"
+    }
+  ],
+  "textContent": {
+    "pageTitle": "OPERATION TABLE MENU",
+    "addButton": "ADD TO MENU",
+    "modals": {
+      "edit": {
+        "title": "EDIT",
+        "message": "Are you sure you want to edit this plate?",
+        "cancelButton": "CANCEL",
+        "confirmButton": "EDIT"
+      },
+      "eliminate": {
+        "title": "ELIMINATE",
+        "message": "Are you sure you want to eliminate this plate?",
+        "cancelButton": "CANCEL",
+        "confirmButton": "ELIMINATE"
+      }
+    }
+  }
+}
