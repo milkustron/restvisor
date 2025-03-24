@@ -100,5 +100,48 @@
                 {"date": "2025-03-13", "start": "10:30", "finish": "19:30", "total_amount": 9}
             ]
         }
+    ],
+
+    "schedule": [
+      {
+        "worker_id": 1,
+        "user_id": 101,
+        "work_schedule": {
+          "Monday": "09:00 - 18:00",
+          "Tuesday": "09:00 - 18:00",
+          "Wednesday": "09:00 - 18:00",
+          "Thursday": "09:00 - 18:00",
+          "Friday": "09:00 - 18:00",
+          "Saturday": "10:00 - 14:00",
+          "Sunday": "Off"
+        }
+      },
+      {
+        "worker_id": 2,
+        "user_id": 102,
+        "work_schedule": {
+          "Monday": "08:30 - 17:30",
+          "Tuesday": "09:00 - 18:00",
+          "Wednesday": "09:00 - 18:00",
+          "Thursday": "08:30 - 17:30",
+          "Friday": "09:00 - 18:00",
+          "Saturday": "Off",
+          "Sunday": "Off"
+        }
+      },
+      {
+        "worker_id": 3,
+        "user_id": 103,
+        "work_schedule": {
+          "Monday": "09:00 - 18:00",
+          "Tuesday": "09:00 - 18:00",
+          "Wednesday": "09:00 - 18:00",
+          "Thursday": "Off",
+          "Friday": "09:00 - 18:00",
+          "Saturday": "10:00 - 14:00",
+          "Sunday": "Off"
+        }
+      }
     ]
 }
+

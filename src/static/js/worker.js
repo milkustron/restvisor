@@ -58,7 +58,6 @@ function renderShiftsTable(data) {
     const tbody = table.querySelector('tbody');
     
     tbody.innerHTML = '';
-    // Tomamos el trabajador con id = 1 como ejemplo
     const worker = data.workers.find(w => w.id === 1);
 
     if (worker) {
