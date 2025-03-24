@@ -43,6 +43,7 @@ function loadPageContent(data) {
     const elements = {
         "date": data.sitio.fecha,
         "weekDay": data.sitio.dia,
+        "RestVisor": data.sitio.nombre_restaurante
     };
 
     Object.entries(elements).forEach(([id, text]) => {

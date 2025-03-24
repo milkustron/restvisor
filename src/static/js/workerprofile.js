@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     try {
-        // Cargamos la configuración/JSON de la página
         const data = await loadJSON("../static/database.json");
 
-        // Cargamos los componentes de forma concurrente
         await Promise.all([
             loadComponent("navbarworker", "../templates/fragments/navbarworker.html"),
             loadComponent("shifts-table", "../templates/fragments/shifts-table.html"),
@@ -43,12 +41,28 @@ function loadPageContent(data) {
     const elements = {
         "date": data.sitio.fecha,
         "weekDay": data.sitio.dia,
+        "RestVisor": data.sitio.nombre_restaurante
     };
 
     Object.entries(elements).forEach(([id, text]) => {
         const el = document.getElementById(id);
         if (el) el.textContent = text;
     });
+
+    const workerData = data.users.find(w => w.id === 1);
+
+    if (workerData) {
+        const workerElements = {
+            "name": workerData.first_name,
+            "email": workerData.email
+        }
+
+        Object.entries(workerElements).forEach(([id, text]) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = text;
+        });
+
+    }
 
     console.log("Datos JSON cargados correctamente.");
 }
