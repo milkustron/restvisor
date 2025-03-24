@@ -50,6 +50,20 @@ function loadPageContent(data) {
         if (el) el.textContent = text;
     });
 
+    const workerData = data.users.find(w => w.id === 1);
+
+    if (workerData) {
+        const workerElements = {
+            "name": workerData.first_name,
+            "email": workerData.email
+        }
+
+        Object.entries(workerElements).forEach(([id, text]) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = text;
+        });
+
+    }
     console.log("Datos JSON cargados correctamente.");
 }
 
