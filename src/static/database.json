@@ -504,12 +504,12 @@
     {
       "id": 7,
       "name": "supervisor-mockup",
-      "image": "../images/supervisor-mockup.png"
+      "image": "../static/images/supervisor-mockup.png"
     },
     {
       "id": 8,
       "name": "worker-mockup",
-      "image": "../images/worker-mockup.png"
+      "image": "../static/images/worker-mockup.png"
     }
   ],
 
