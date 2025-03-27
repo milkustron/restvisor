@@ -1,40 +1,45 @@
 <div class="reservation-table shadow">
     <div class="row">
         <div class="col-12 d-flex justify-content-center align-items-center px-4 py-3">
-            <h2 class="text-center fw-bold text-dark fs-4">EDIT PAGE</h2>
+            <!-- Título dinámico cargado desde JSON -->
+            <h2 id="editPageTitle" class="text-center fw-bold text-dark fs-4"></h2>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4 d-flex flex-column align-items-center">
-            <h3 class="fw-bold text-dark mb-3">Select image</h3>
+            <!-- Texto dinámico para Select image -->
+            <h3 id="selectImageText" class="fw-bold text-dark mb-3"></h3>
             <input type="file" id="fileInput" class="d-none">
             <div id="fileUploadBox" class="d-flex justify-content-center align-items-center rounded shadow-sm"
                  style="background-color: #D3D3D3; width: 100%; max-width: 250px; height: 180px; cursor: pointer;">
-                <span class="fw-bold text-dark">Search file</span>
+                <!-- Texto dinámico para Search file -->
+                <span id="searchFileText" class="fw-bold text-dark"></span>
             </div>
         </div>
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-5">
-                    <h3 class="fw-bold text-dark">Name</h3>
-                    <input type="text" class="form-control rounded-pill bg-light shadow-sm" placeholder="Set name">
+                    <!-- Texto dinámico para Name -->
+                    <h3 id="nameText" class="fw-bold text-dark"></h3>
+                    <input type="text" id="menuItemName" class="form-control rounded-pill bg-light shadow-sm" placeholder="">
                 </div>
                 <div class="col-md-6">
-                    <h3 class="fw-bold text-dark">PRICE</h3>
-                    <input type="text" id="price" class="form-control rounded-pill bg-light shadow-sm"
-                           placeholder="Set price" inputmode="numeric" pattern="[0-9]*">
+                    <!-- Texto dinámico para PRICE -->
+                    <h3 id="priceText" class="fw-bold text-dark"></h3>
+                    <input type="text" id="price" class="form-control rounded-pill bg-light shadow-sm" placeholder="" inputmode="numeric" pattern="[0-9]*">
                 </div>
             </div>
 
             <div class="row mt-5">
                 <div class="col-md-11">
-                    <h3 class="fw-bold text-dark">Category</h3>
+                    <!-- Texto dinámico para Category -->
+                    <h3 id="categoryText" class="fw-bold text-dark"></h3>
 
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle w-100 rounded-pill shadow-sm"
                                 type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            Select category
+                            <!-- Texto dinámico para Select category -->
                         </button>
 
                         <ul class="dropdown-menu w-100 text-center" aria-labelledby="categoryDropdown">
@@ -52,14 +57,18 @@
 
     <div class="row mt-4">
         <div class="col-10 mx-auto">
-            <h3 class="fw-bold text-dark">Description</h3>
-            <textarea class="form-control bg-light shadow-sm" placeholder="Set description" rows="3"></textarea>
+            <!-- Texto dinámico para Description -->
+            <h3 id="descriptionText" class="fw-bold text-dark"></h3>
+            <textarea id="menuItemDescription" class="form-control bg-light shadow-sm" placeholder="" rows="3"></textarea>
         </div>
     </div>
 
     <div class="row mt-4">
         <div class="col-12 d-flex justify-content-end">
-            <a href="menu-operation.html" class="btn yellow-button shadow-sm px-4 py-2 fw-bold mb-4 me-4">Save Changes</a>        </div>
+            <!-- Botón dinámico cargado desde JSON -->
+            <a href="menu-operation.html" id="saveChangesButton" class="btn yellow-button shadow-sm px-4 py-2 fw-bold mb-4 me-4"></a>
+        </div>
     </div>
 </div>
+
 
