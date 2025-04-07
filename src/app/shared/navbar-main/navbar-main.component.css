@@ -1,3 +1,37 @@
 .navbar {
-    background-color: red;
+    background-color: rgba(248, 45, 45, 0.6);
+}
+
+.navbar-brand h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+    margin: 0;
+}
+
+.login-button {
+    background-color: #F14040;
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.login-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.signup-button {
+    background-color: white;
+    color: #F14040;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.signup-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
 }

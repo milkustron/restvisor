@@ -1,21 +1,22 @@
-<div class="modal fade" id="loginModalbutton" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-absolute modal-sm" style="top: 10.5%; right: 0;">
+<div class="modal fade" id="loginModalbutton" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="loginModalLabel">LOG IN</h3>
+                <h5 class="modal-title">Login</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form (ngSubmit)="login()">
                     <div class="mb-3">
-                        <label for="email" class="form-label">e-mail</label>
-                        <input type="email" class="form-control rounded-pill" id="email" />
+                        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email" required />
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">password</label>
-                        <input type="password" class="form-control rounded-pill" id="password" />
+                        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password" required />
                     </div>
-                    <button type="submit" class="btn login-button w-100 shadow">LOG IN</button>
+                    <div class="text-danger small" *ngIf="error">{{ error }}</div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -5,6 +5,6 @@ export const firebaseConfig = {
     projectId: "restvisor-887b9",
     storageBucket: "restvisor-887b9.firebasestorage.app",
     messagingSenderId: "674854508849",
-    appId: "1:674854508849:web:27551aa77a8e43b7b07810",
-    measurementId: "G-0WNC6K2MJE"
+    appId: "1:674854508849:web:dd6b8ca735af7f4ab07810",
+    measurementId: "G-Z6GVHFKTXD"
 };

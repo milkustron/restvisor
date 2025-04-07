@@ -6,11 +6,11 @@ import { LoginModalComponent } from '../../shared/login-modal/login-modal.compon
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [
-    CommonModule,
-    NavbarMainComponent,
-    LoginModalComponent // ✅ Lo añades aquí
-  ],
+    imports: [
+        CommonModule,
+        NavbarMainComponent,
+        LoginModalComponent,
+    ],
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })

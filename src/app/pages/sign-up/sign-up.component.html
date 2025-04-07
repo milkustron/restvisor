@@ -1,1 +1,8 @@
-<p>sign-up works!</p>
+<app-navbar-main></app-navbar-main>
+
+<div class="gradient-bg d-flex align-items-center justify-content-center">
+    <div class="container p-4" style="max-width: 850px;">
+        <h2 class="text-center text-white pb-3">Sign up</h2>
+        <app-sign-up-form (formSubmitted)="onFormSubmit($event)"></app-sign-up-form>
+    </div>
+</div>

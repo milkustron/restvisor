@@ -1,1 +1,44 @@
-<p>supervisor works!</p>
+<app-navbar-main></app-navbar-main>
+
+<div class="container-fluid py-4 px-3">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4 text-center">Supervisor Dashboard</h2>
+        </div>
+
+        <!-- Tabla de reservas -->
+        <div class="col-12">
+            <app-reservations-table></app-reservations-table>
+        </div>
+    </div>
+</div>
+
+<!-- Modales -->
+<app-add-reservation-modal></app-add-reservation-modal>
+
+<!-- Modal de Confirmación -->
+<app-generic-modal
+        modalId="confirmReservationModal"
+        title="Confirm Reservation"
+        message="Are you sure you want to confirm this reservation?"
+        confirmText="Confirm"
+        (confirmed)="onConfirmReservation()">
+</app-generic-modal>
+
+<!-- Modal de Cancelación -->
+<app-generic-modal
+        modalId="cancelReservationModal"
+        title="Cancel Reservation"
+        message="This will cancel the reservation. Do you want to proceed?"
+        confirmText="Cancel"
+        (confirmed)="onCancelReservation()">
+</app-generic-modal>
+
+<!-- Modal de Eliminación -->
+<app-generic-modal
+        modalId="deleteReservationModal"
+        title="Delete Reservation"
+        message="This action will permanently delete the reservation. Continue?"
+        confirmText="Delete"
+        (confirmed)="onDeleteReservation()">
+</app-generic-modal>

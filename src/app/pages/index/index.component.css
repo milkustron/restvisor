@@ -1,0 +1,29 @@
+.main-contrainer {
+    background-color: rgba(248, 255, 255, 0.59);
+    border-radius: 15px;
+    width: 80vw;
+    max-width: 520px;
+    padding: 5vw;
+    text-align: justify;
+}
+
+.main-contrainer h5 {
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: 350;
+    color: #FD493B;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.mockup {
+    width: 50vw;
+    max-width: 530px;
+    height: auto;
+    margin: 0 10vw;
+}

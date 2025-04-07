@@ -7,11 +7,12 @@ import { WorkerProfileComponent } from './pages/worker-profile/worker-profile.co
 import { MenuOperationComponent } from './pages/menu-operation/menu-operation.component';
 import { MenuEditComponent } from './pages/menu-edit/menu-edit.component';
 import { MenuClientComponent } from './pages/menu-client/menu-client.component';
+import { authGuard } from './core/auth.guard';
 
 export const routes: Routes = [
     { path: '', component: IndexComponent },
     { path: 'sign-up', component: SignUpComponent },
-    { path: 'supervisor', component: SupervisorComponent },
+    { path: 'supervisor', component: SupervisorComponent, canActivate: [authGuard] },
     { path: 'worker', component: WorkerComponent },
     { path: 'worker-profile', component: WorkerProfileComponent },
     { path: 'menu-operation', component: MenuOperationComponent },
