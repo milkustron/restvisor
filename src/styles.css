@@ -37,3 +37,26 @@ h5 {
     font-size: 40px;
     color: #FD493B;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: url('/assets/images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(at bottom right,
+    rgba(238, 222, 179, 0.92),
+    rgba(255, 87, 65, 0.92)
+    );
+    z-index: -1;
+}
