@@ -7,8 +7,8 @@
         </a>
         <div class="d-flex gap-2">
             <ng-container *ngIf="user$ | async as user; else guest">
-                <span class="text-white">Hello, {{ user.email }}</span>
-                <button class="btn btn-outline-light btn-sm" (click)="logout()">Logout</button>
+                <span class="text-white d-flex align-items-center">Hello, {{ user.email }}</span>
+                <button class="btn signup-button btn-sm" (click)="logout()">Logout</button>
             </ng-container>
             <ng-template #guest>
                 <button class="btn login-button shadow" data-bs-toggle="modal" data-bs-target="#loginModalbutton">
