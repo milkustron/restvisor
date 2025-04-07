@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NavbarMainComponent } from '../../shared/navbar-main/navbar-main.component';
+import { LoginModalComponent } from '../../shared/login-modal/login-modal.component';
 
 @Component({
   selector: 'app-index',
-  imports: [],
+  standalone: true,
+  imports: [
+    CommonModule,
+    NavbarMainComponent,
+    LoginModalComponent // ✅ Lo añades aquí
+  ],
   templateUrl: './index.component.html',
-  styleUrl: './index.component.css'
+  styleUrls: ['./index.component.css']
 })
-export class IndexComponent {
-
-}
+export class IndexComponent {}

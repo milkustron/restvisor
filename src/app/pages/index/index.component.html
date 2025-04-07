@@ -1,1 +1,31 @@
-<p>index works!</p>
+<app-navbar-main></app-navbar-main>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 p-4 d-flex align-items-center justify-content-center">
+            <div class="main-contrainer p-4">
+                <h5 id="mainViewTitle"></h5>
+                <br />
+                <h4 id="mainViewDescription"></h4>
+                <br />
+                <h4><strong id="mainViewCallToAction"></strong></h4>
+
+                <div class="button-container">
+                    <button id="signUpButton" class="btn login-button"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-12 p-2 d-flex justify-content-center align-items-center">
+                <img id="supervisorMockup" src="assets/images/mockup_supervisor.png" alt="Supervisor mockup" class="mockup img-fluid" />
+            </div>
+            <div class="col-12 p-2 d-flex justify-content-center align-items-center">
+                <img id="workerMockup" src="assets/images/mockup_worker.png" alt="Worker mockup" class="mockup img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<app-login-modal></app-login-modal>
