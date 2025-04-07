@@ -3,7 +3,7 @@ import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
 
 import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from './enviroments/enviroment';
+import { firebaseConfig } from './app/core/enviroment';
 
 // Inicializa Firebase antes de arrancar la app
 initializeApp(firebaseConfig);
