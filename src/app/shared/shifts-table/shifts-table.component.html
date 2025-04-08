@@ -1,1 +1,27 @@
-<p>shifts-table works!</p>
+<div class="reservation-table shadow">
+    <div class="row">
+      <div class="col-6 d-flex align-items-center justify-content-start px-4 py-1">
+        <h4 class="text-center">Shifts</h4>
+      </div>
+    </div>
+    <table class="w-100 text-center">
+      <hr>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Start</th>
+          <th>Finish</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let shift of shifts">
+          <td>{{ shift.date }}</td>
+          <td>{{ shift.start }}</td>
+          <td>{{ shift.end }}</td>
+          <td>{{ shift.total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
