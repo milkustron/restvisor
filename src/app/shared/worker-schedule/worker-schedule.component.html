@@ -1,1 +1,9 @@
-<p>worker-schedule works!</p>
+<div class="sidebar p-3 shadow">
+    <h2 class="text-center text-dark">Worker Schedule</h2>
+    <br>
+    <ng-container *ngFor="let item of schedule">
+      <h2 class="text-center text-dark">{{ item.day }}: {{ item.start }} - {{ item.finish }}</h2>
+      <br>
+    </ng-container>
+  </div>
+  
