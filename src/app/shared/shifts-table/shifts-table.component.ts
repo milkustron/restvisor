@@ -1,8 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-shifts-table',
-  imports: [],
+  standalone: true, 
+  imports: [CommonModule], 
   templateUrl: './shifts-table.component.html',
   styleUrl: './shifts-table.component.css'
 })
