@@ -1,33 +1,32 @@
-<form [formGroup]="form" (ngSubmit)="register()">
+<form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)" class="card p-4">
     <!-- Name -->
     <div class="mb-3">
-        <label class="form-label">Name</label>
-        <input type="text" class="form-control" formControlName="name" />
-        <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="text-danger">
-            Name is required.
-        </div>
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" ngModel required>
     </div>
 
     <!-- Email -->
     <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control" formControlName="email" />
-        <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="text-danger">
-            <span *ngIf="form.get('email')?.errors?.['required']">Email is required.</span>
-            <span *ngIf="form.get('email')?.errors?.['email']">Invalid email format.</span>
-        </div>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel required>
     </div>
 
     <!-- Password -->
     <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" formControlName="password" />
-        <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="text-danger">
-            Password is required.
-        </div>
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password" ngModel required>
     </div>
 
-    <button class="btn btn-primary w-100" type="submit" [disabled]="form.invalid">
-        Register
-    </button>
+    <!-- Role -->
+    <div class="mb-3">
+        <label for="role" class="form-label">Rol</label>
+        <select class="form-select" id="role" name="role" ngModel required>
+            <option value="" disabled selected>Selecciona un rol</option>
+            <option *ngFor="let role of roles" [value]="role.value">
+                {{ role.label }}
+            </option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid">Registrarse</button>
 </form>
