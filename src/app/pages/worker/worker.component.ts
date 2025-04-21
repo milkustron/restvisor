@@ -1,46 +1,14 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NavbarMainComponent } from '../../shared/navbar-main/navbar-main.component';
+import { ShiftsTableComponent } from '../../shared/shifts-table/shifts-table.component'
+import { WorkerScheduleComponent } from '../../shared/worker-schedule/worker-schedule.component';
 
 @Component({
   selector: 'app-worker',
   standalone: true,
-  imports: [CommonModule, NavbarMainComponent],
-  template: `
-    <app-navbar-main></app-navbar-main>
-    <div class="container mt-4">
-      <h1>Panel de Empleado</h1>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Mis Tareas</h5>
-              <p class="card-text">Gestiona tus tareas asignadas.</p>
-              <button class="btn btn-primary">Ver Tareas</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Mi Horario</h5>
-              <p class="card-text">Consulta tu horario de trabajo.</p>
-              <button class="btn btn-primary">Ver Horario</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Reportes</h5>
-              <p class="card-text">Envía tus reportes diarios.</p>
-              <button class="btn btn-primary">Crear Reporte</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
-  styles: []
+  imports: [ShiftsTableComponent, WorkerScheduleComponent],
+  templateUrl: './worker.component.html',
+  styleUrls: ['./worker.component.css']
 })
-export class WorkerComponent {}
+export class WorkerComponent {
+
+}

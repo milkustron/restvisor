@@ -7,14 +7,18 @@ import { WorkerProfileComponent } from './pages/worker-profile/worker-profile.co
 import { MenuOperationComponent } from './pages/menu-operation/menu-operation.component';
 import { MenuEditComponent } from './pages/menu-edit/menu-edit.component';
 import { MenuClientComponent } from './pages/menu-client/menu-client.component';
+import { AdminComponent } from './pages/admin/admin.component';
 import { authGuard } from './core/auth.guard';
 import { supervisorGuard } from './core/supervisor.guard';
+import { workerGuard } from './core/worker.guard';
+import { adminGuard } from './core/admin.guard';
 
 export const routes: Routes = [
     { path: '', component: IndexComponent },
     { path: 'sign-up', component: SignUpComponent },
     { path: 'supervisor', component: SupervisorComponent, canActivate: [authGuard, supervisorGuard] },
-    { path: 'worker', component: WorkerComponent },
+    { path: 'worker', component: WorkerComponent, canActivate: [authGuard, workerGuard] },
+    { path: 'admin', component: AdminComponent, canActivate: [authGuard, adminGuard] },
     { path: 'worker-profile', component: WorkerProfileComponent },
     { path: 'menu-operation', component: MenuOperationComponent },
     { path: 'menu-edit', component: MenuEditComponent },

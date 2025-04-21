@@ -40,7 +40,7 @@ export class AuthService {
                     await this.router.navigate(['/supervisor']);
                     break;
                 case 'admin':
-                    await this.router.navigate(['/admin-dashboard']);
+                    await this.router.navigate(['/admin']);
                     break;
                 case 'employee':
                     await this.router.navigate(['/worker']);
