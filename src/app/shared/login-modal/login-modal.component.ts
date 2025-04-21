@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../core/auth.service';
 import { FormsModule } from '@angular/forms';
 
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-login-modal',
   standalone: true,
@@ -17,12 +19,21 @@ export class LoginModalComponent {
 
   constructor(private authService: AuthService) {}
 
-  login() {
-    this.authService.login(this.email, this.password).then(() => {
+  async login() {
+    try {
+      await this.authService.login(this.email, this.password);
       this.error = '';
-      // Cierra el modal manualmente si lo deseas
-    }).catch((err) => {
+      
+      // Cerrar el modal
+      const modalElement = document.getElementById('loginModalbutton');
+      if (modalElement) {
+        const modal = bootstrap.Modal.getInstance(modalElement);
+        if (modal) {
+          modal.hide();
+        }
+      }
+    } catch (err: any) {
       this.error = err.message;
-    });
+    }
   }
 }

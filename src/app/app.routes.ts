@@ -8,11 +8,12 @@ import { MenuOperationComponent } from './pages/menu-operation/menu-operation.co
 import { MenuEditComponent } from './pages/menu-edit/menu-edit.component';
 import { MenuClientComponent } from './pages/menu-client/menu-client.component';
 import { authGuard } from './core/auth.guard';
+import { supervisorGuard } from './core/supervisor.guard';
 
 export const routes: Routes = [
     { path: '', component: IndexComponent },
     { path: 'sign-up', component: SignUpComponent },
-    { path: 'supervisor', component: SupervisorComponent, canActivate: [authGuard] },
+    { path: 'supervisor', component: SupervisorComponent, canActivate: [authGuard, supervisorGuard] },
     { path: 'worker', component: WorkerComponent },
     { path: 'worker-profile', component: WorkerProfileComponent },
     { path: 'menu-operation', component: MenuOperationComponent },
