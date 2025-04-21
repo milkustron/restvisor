@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarMainComponent } from '../../shared/navbar-main/navbar-main.component';
 import { ReservationsTableComponent } from '../../shared/reservations-table/reservations-table.component';
-import { AddReservationModalComponent } from '../../shared/add-reservation-modal/add-reservation-modal.component';
 import {GenericModalComponent} from "../../shared/generic-modal/generic-modal.component";
 
 
 @Component({
   selector: 'app-supervisor',
   standalone: true,
-  imports: [CommonModule, NavbarMainComponent, ReservationsTableComponent, AddReservationModalComponent, GenericModalComponent],
+  imports: [CommonModule, NavbarMainComponent, ReservationsTableComponent, GenericModalComponent],
   templateUrl: './supervisor.component.html',
   styleUrls: ['./supervisor.component.css']
 })
