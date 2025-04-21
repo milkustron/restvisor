@@ -1,36 +1,80 @@
-<div class="reservation-table shadow">
-    <div class="row">
-        <div class="col-6 d-flex align-items-center justify-content-start px-4 py-3">
-            <h4 id="reservations-title" class="text-center">Today's Reservations</h4>
-        </div>
-        <div class="col-6 d-flex align-items-center justify-content-end px-4 py-3">
-            <button id="add-reservation-btn" class="btn yellow-button col-auto" data-bs-toggle="modal" data-bs-target="#addReservationModal">ADD RESERVATION</button>
-        </div>
+<div class="reservation-table p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4>Today's Reservations</h4>
+        <button class="yellow-button" data-bs-toggle="modal" data-bs-target="#addReservationModal">ADD RESERVATION</button>
     </div>
-    <table class="w-100 text-center">
-        <thead class="table-dark">
-        <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Time</th>
-            <th>Guests</th>
-            <th>State</th>
-            <th>Actions</th>
-        </tr>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Time</th>
+                <th>Guests</th>
+                <th>State</th>
+                <th>Actions</th>
+            </tr>
         </thead>
-        <tbody id="reservations-body">
-        <tr *ngFor="let reservation of reservations">
-            <td>{{ reservation.name }}</td>
-            <td>{{ reservation.phone }}</td>
-            <td>{{ reservation.time }}</td>
-            <td>{{ reservation.guests }}</td>
-            <td>{{ reservation.state }}</td>
-            <td>
-                <button class="btn btn-success btn-sm me-2" (click)="onConfirmReservation(reservation)">✓</button>
-                <button class="btn btn-warning btn-sm me-2" (click)="onCancelReservation(reservation)">✗</button>
-                <button class="btn btn-danger btn-sm" (click)="onDeleteReservation(reservation)">🗑</button>
-            </td>
-        </tr>
+        <tbody>
+            <tr *ngFor="let reservation of reservations$ | async">
+                <td>{{ reservation.name }}</td>
+                <td>{{ reservation.phone }}</td>
+                <td>{{ reservation.time }}</td>
+                <td>{{ reservation.guests }}</td>
+                <td>{{ reservation.state }}</td>
+                <td>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-success btn-sm" (click)="onConfirmReservation(reservation)">✓</button>
+                        <button class="btn btn-warning btn-sm" (click)="onCancelReservation(reservation)">✗</button>
+                        <button class="btn btn-danger btn-sm" (click)="onDeleteReservation(reservation)">🗑</button>
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
+</div>
+
+<!-- Modal para añadir reservación -->
+<div class="modal fade" id="addReservationModal" tabindex="-1" aria-labelledby="addReservationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addReservationModalLabel">Add New Reservation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #reservationForm="ngForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" 
+                               [(ngModel)]="newReservation.name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" 
+                               [(ngModel)]="newReservation.phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="time" class="form-label">Time</label>
+                        <input type="time" class="form-control" id="time" name="time" 
+                               [(ngModel)]="newReservation.time" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="guests" class="form-label">Number of Guests</label>
+                        <input type="number" class="form-control" id="guests" name="guests" 
+                               [(ngModel)]="newReservation.guests" min="1" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="yellow-button" 
+                        (click)="onAddReservation()" 
+                        data-bs-dismiss="modal"
+                        [disabled]="!reservationForm.form.valid">
+                    Add Reservation
+                </button>
+            </div>
+        </div>
+    </div>
 </div>

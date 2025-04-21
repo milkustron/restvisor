@@ -11,13 +11,13 @@ table {
 
 th, td {
     padding: 15px;
-    border-bottom: 1px solid #ddd;
+    background-color: transparent;
     font-family: 'Inter', sans-serif;
 }
 
 th {
     color: #36291C;
-    font-weight: 330;
+    font-weight: 400;
     font-size: 16px;
 }
 
@@ -25,6 +25,7 @@ td {
     font-weight: 330;
     font-size: 16px;
     color: #36291C;
+    border: none;
 }
 
 tr:hover {
@@ -38,6 +39,8 @@ tr:hover {
     font-size: 16px;
     font-weight: 200;
     border-radius: 15px;
+    border: none;
+    padding: 5px 10px;
 }
 
 .yellow-button:hover {
