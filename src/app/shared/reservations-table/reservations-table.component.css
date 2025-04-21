@@ -1,4 +1,55 @@
-.table th,
-.table td {
-    vertical-align: middle;
+.reservation-table {
+    background-color: rgba(248, 255, 255, 0.59);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Inter', sans-serif;
+}
+
+th {
+    color: #36291C;
+    font-weight: 330;
+    font-size: 16px;
+}
+
+td {
+    font-weight: 330;
+    font-size: 16px;
+    color: #36291C;
+}
+
+tr:hover {
+    background-color: rgba(248, 255, 255, 0.8);
+}
+
+.yellow-button {
+    background-color: #f1de47;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.yellow-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 330;
+    font-size: 16px;
+    line-height: normal;
+    color: #36291C;
+    margin: 0;
 }
