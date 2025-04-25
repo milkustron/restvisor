@@ -1,8 +1,16 @@
 <app-navbar-main></app-navbar-main>
 
-<div class="gradient-bg d-flex align-items-center justify-content-center">
-    <div class="container p-4" style="max-width: 850px;">
-        <h2 class="text-center text-white pb-3">Sign up</h2>
-        <app-sign-up-form (formSubmitted)="onFormSubmit($event)"></app-sign-up-form>
+<div class="gradient-bg d-flex align-items-center justify-content-center min-vh-100">
+    <div class="container p-4 shadow-lg rounded-4 border border-dark bg-white">
+        <div class="row g-0">
+            <div class="col-md-4 d-flex flex-column justify-content-center align-items-center p-4 reservation-table text-center text-white bg-dark">
+                <img src="../../../assets/images/logo_black.png" alt="RestVisor" width="100">
+                <h2 class="fw-bold text-light fs-2 m-0 p-0">RestVisor</h2>
+            </div>
+            <div class="col-md-8 p-3">
+                <h3 class="fw-bold mb-4">Sign Up</h3>
+                <app-sign-up-form (formSubmitted)="onFormSubmit($event)"></app-sign-up-form>
+            </div>
+        </div>
     </div>
 </div>

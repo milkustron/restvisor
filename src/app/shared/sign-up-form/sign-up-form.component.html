@@ -1,32 +1,104 @@
 <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)" class="card p-4">
-    <!-- Name -->
-    <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="name" name="name" ngModel required>
-    </div>
 
-    <!-- Email -->
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" ngModel required>
+    <!-- Nombres -->
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First Name"
+               id="firstName" name="firstName" ngModel required>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last Name"
+               id="lastName" name="lastName" ngModel required>
+      </div>
     </div>
-
-    <!-- Password -->
-    <div class="mb-3">
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" name="password" ngModel required>
+  
+    <!-- Email y Teléfono -->
+    <div class="row mb-3">
+      <div class="col">
+        <input type="email" class="form-control" placeholder="Email address"
+               id="email" name="email" ngModel required>
+      </div>
+      <div class="col">
+        <input type="tel" class="form-control" placeholder="Phone number"
+               id="phone" name="phone" ngModel>
+      </div>
     </div>
-
-    <!-- Role -->
-    <div class="mb-3">
-        <label for="role" class="form-label">Rol</label>
-        <select class="form-select" id="role" name="role" ngModel required>
-            <option value="" disabled selected>Selecciona un rol</option>
-            <option *ngFor="let role of roles" [value]="role.value">
-                {{ role.label }}
-            </option>
+  
+    <!-- Dirección y Contraseña -->
+    <div class="row mb-3">
+      <div class="col-8">
+        <input type="text" class="form-control" placeholder="Street Address"
+               id="address" name="address" ngModel required>
+      </div>
+      <div class="col-4">
+        <input type="password" class="form-control" placeholder="Password"
+               id="password" name="password" ngModel required>
+      </div>
+    </div>
+  
+    <!-- Ciudad, País, ZIP -->
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="City"
+               id="city" name="city" ngModel>
+      </div>
+      <div class="col">
+        <select class="form-select" id="country" name="country" ngModel>
+          <option value="" disabled selected>Select country</option>
+          <option value="Spain">Spain</option>
+          <option value="France">France</option>
         </select>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Zip Code"
+               id="zip" name="zip" ngModel>
+      </div>
     </div>
-
-    <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid">Registrarse</button>
-</form>
+  
+    <!-- Rol -->
+    <div class="mb-3">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="role" id="supervisor"
+               value="supervisor" ngModel checked>
+        <label class="form-check-label" for="supervisor">Supervisor</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="role" id="customer"
+               value="customer" ngModel>
+        <label class="form-check-label" for="customer">Customer</label>
+      </div>
+    </div>
+  
+    <!-- Opciones de negocio (solo si es supervisor, opcional mostrar con *ngIf) -->
+    <div id="business-options">
+      <div class="row mb-3">
+        <div class="col-8">
+          <input type="text" class="form-control" placeholder="Business Name"
+                 id="businessName" name="businessName" ngModel>
+        </div>
+        <div class="col-4">
+          <input type="text" class="form-control" placeholder="CIF"
+                 id="cif" name="cif" ngModel required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" rows="3" placeholder="Business Description"
+                  id="businessDesc" name="businessDesc" ngModel></textarea>
+      </div>
+    </div>
+  
+    <!-- Aceptar términos -->
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="terms" name="terms" ngModel required>
+      <label class="form-check-label" for="terms">
+        I agree to <a href="#" class="text-primary">terms and conditions</a>
+      </label>
+    </div>
+  
+    <!-- Botón de envío -->
+    <button type="submit" class="btn btn-primary w-100" [disabled]="!signUpForm.valid">
+      SIGN UP
+    </button>
+  
+  </form>
+  
