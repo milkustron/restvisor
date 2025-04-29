@@ -29,4 +29,25 @@ export class DatabaseService {
     const reservationDoc = doc(this.firestore, `reservations/${id}`);
     return deleteDoc(reservationDoc);
   }
+
+  getShifts() {
+    const workerShiftsCollection = collection(this.firestore, 'workerShifts');
+    return collectionData(workerShiftsCollection);
+  }
+
+  getShiftById(id: string) {
+    const workerShiftsCollection = doc(this.firestore, `workerShifts/${id}`);
+    return docData(workerShiftsCollection);
+  }
+
+  updateShift(id: string, shift: Reservation) {
+    const workerShiftsCollection = doc(this.firestore, `workerShifts/${id}`);
+    return updateDoc(workerShiftsCollection, { ...shift });
+  }
+
+  deleteShift(id: string) {
+    const workerShiftsCollection = doc(this.firestore, `workerShifts/${id}`);
+    return deleteDoc(workerShiftsCollection);
+  }
+
 }
