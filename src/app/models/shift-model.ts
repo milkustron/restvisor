@@ -6,5 +6,4 @@ export interface shift {
     end: Timestamp,
     total: string, 
     state: 'ongoing' | 'finished',
-    employeeId: string
 }
