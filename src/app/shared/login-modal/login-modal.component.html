@@ -2,20 +2,24 @@
     <div class="modal-dialog modal-dialog-centered modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Login</h5>
+                <h5 class="modal-title">LOG IN</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <form (ngSubmit)="login()">
                     <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email" required />
+                        <label for="emailInput" class="form-label">e-mail</label>
+                        <input id="emailInput" type="email" class="form-control" placeholder="email"
+                            [(ngModel)]="email" name="email" required />
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password" required />
+                        <label for="passwordInput" class="form-label">password</label>
+                        <input id="passwordInput" type="password" class="form-control" placeholder="********"
+                            [(ngModel)]="password" name="password" required />
                     </div>
-                    <div class="text-danger small" *ngIf="error">{{ error }}</div>
+                    <div class="text-danger small" *ngIf="error">There was a problem with your login. Check if the data you put are correct. <br /><br /> Error details: {{ error }}</div>
                     <div class="d-grid">
-                        <button class="btn btn-primary" type="submit">Login</button>
+                        <button class="btn btn-primary" type="submit">LOG IN</button>
                     </div>
                 </form>
             </div>

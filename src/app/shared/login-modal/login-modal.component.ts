@@ -24,7 +24,6 @@ export class LoginModalComponent {
       await this.authService.login(this.email, this.password);
       this.error = '';
       
-      // Cerrar el modal
       const modalElement = document.getElementById('loginModalbutton');
       if (modalElement) {
         const modal = bootstrap.Modal.getInstance(modalElement);

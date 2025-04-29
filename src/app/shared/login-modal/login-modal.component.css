@@ -1,0 +1,63 @@
+.modal-dialog {
+    max-width: 420px;
+}
+
+.modal-content {
+    background-color: #f08f5f;
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-title {
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-left: 35%;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+}
+
+.modal-body form {
+    margin-top: 1.5rem;
+}
+
+input.form-control {
+    background-color: #f4eef0;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+input.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: #db5b53;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.75rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 2rem auto 0;
+    }

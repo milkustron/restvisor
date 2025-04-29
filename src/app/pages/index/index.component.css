@@ -27,3 +27,16 @@
     height: auto;
     margin: 0 10vw;
 }
+
+.signup-button {
+    background-color: #F14040;
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.signup-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
