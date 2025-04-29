@@ -42,3 +42,8 @@ testem.log
 .DS_Store
 Thumbs.db
 /.editorconfig
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
