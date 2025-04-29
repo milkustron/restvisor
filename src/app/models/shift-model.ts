@@ -1,6 +1,6 @@
 import { Timestamp } from "firebase/firestore";
 
-export interface shift {
+export interface Shift {
     date: Timestamp, 
     start: Timestamp,
     end: Timestamp,
