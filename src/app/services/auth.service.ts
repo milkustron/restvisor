@@ -3,17 +3,18 @@ import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signO
 import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
 import { docData } from 'rxfire/firestore';
 import { Observable } from 'rxjs';
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private auth: Auth, private firestore: Firestore) {}
+  constructor(private auth: Auth, private firestore: Firestore, private router: Router) {}
 
   async registerUser(
     email: string,
     password: string,
-    role: 'worker' | 'supervisor',
+    role: string,
     profileData: any
   ): Promise<UserCredential> {
     const cred = await createUserWithEmailAndPassword(this.auth, email, password);
@@ -25,6 +26,17 @@ export class AuthService {
       role,
       ...profileData
     };
+
+    switch (profileData.role) {
+      case 'supervisor':
+        await this.router.navigate(['/supervisor']);
+        break;
+      case 'worker':
+        await this.router.navigate(['/worker']);
+        break;
+      default:
+        await this.router.navigate(['/']);
+    }
 
     await setDoc(doc(this.firestore, 'users', uid), userDoc);
     return cred;
