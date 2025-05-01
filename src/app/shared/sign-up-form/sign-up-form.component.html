@@ -1,9 +1,9 @@
-<form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)" class="card p-4">
+<form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)" class="card p-4 bg-transparent border-0">
 
     <!-- Nombres -->
     <div class="row mb-3">
         <div class="col">
-            <input type="text" class="form-control" placeholder="First Name"
+            <input type="text" class="form-control " placeholder="First Name"
                    id="firstName" name="firstName" [(ngModel)]="firstName" required>
         </div>
         <div class="col">
@@ -82,8 +82,8 @@
             </div>
         </div>
         <div class="mb-3">
-      <textarea class="form-control" rows="3" placeholder="Business Description"
-                id="businessDesc" name="businessDesc" ngModel></textarea>
+  <textarea class="form-control" rows="3" placeholder="Business Description"
+            id="businessDesc" name="businessDesc" ngModel></textarea>
         </div>
     </div>
 
@@ -96,7 +96,7 @@
     </div>
 
     <!-- Botón de envío -->
-    <button type="submit" class="btn btn-primary w-100" [disabled]="!signUpForm.valid">
+    <button type="submit" class="btn btn-danger w-100" [disabled]="!signUpForm.valid">
         SIGN UP
     </button>
 

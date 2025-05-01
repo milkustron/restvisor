@@ -13,9 +13,11 @@ import { AuthService } from  "../../core/auth.service"
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+  errorMessage: string | null = null;
   constructor(private authService: AuthService, private router: Router) {}
 
   async onFormSubmit(data: { name: string; email: string; password: string; role: UserRole; extra?: any }) {
+    this.errorMessage = null;
     try {
       await this.authService.register(data.email, data.password,  {
         role: data.role,
@@ -33,9 +35,26 @@ export class SignUpComponent {
         default:
           await this.router.navigate(['/']);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error during registration:', error);
+      this.errorMessage = this.getFriendlyError(error.code);
     }
   }
+
+
+  private getFriendlyError(code: string): string {
+    switch (code) {
+      case 'auth/email-already-in-use':
+        return 'This email is already in use';
+      case 'auth/invalid-email':
+        return 'Invalid email';
+      case 'auth/weak-password':
+        return 'Weak password must be at least 6 characters';
+      default:
+        return 'An unexpected error has occurred. Please try again.';
+    }
+  }
+
+
 
 }
