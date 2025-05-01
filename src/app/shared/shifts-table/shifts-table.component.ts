@@ -1,17 +1,65 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ShiftService } from '../../services/shifts/shift.service';
+import { AuthService } from '../../core/auth.service';
+import {Firestore, collection, getDocs} from '@angular/fire/firestore';
+import {CommonModule, DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-shifts-table',
-  standalone: true, 
-  imports: [CommonModule], 
   templateUrl: './shifts-table.component.html',
-  styleUrl: './shifts-table.component.css'
+  imports: [
+    DatePipe,
+    CommonModule
+  ],
+  styleUrls: ['./shifts-table.component.css']
 })
-export class ShiftsTableComponent {
-  shifts = [
-    { date: '2025-04-01', start: '09:00', end: '17:00', total: '8h' },
-    { date: '2025-04-02', start: '10:00', end: '18:00', total: '8h' },
-    { date: '2025-04-03', start: '08:30', end: '16:30', total: '8h' },
-  ];
+export class ShiftsTableComponent implements OnInit {
+  shifts: any[] = [];
+  isClockedIn: boolean = false;
+
+  constructor(
+      private shiftService: ShiftService,
+      private authService: AuthService,
+      private firestore: Firestore
+  ) {}
+
+  ngOnInit(): void {
+    this.loadShifts();
+  }
+
+  // Cargar los turnos del trabajador desde Firestore
+
+
+  async loadShifts() {
+  const user = this.authService.currentUser;
+  if (!user) return;
+
+  const employeeId = user.uid;
+  const shiftsCollectionRef = collection(this.firestore, 'workerShifts', employeeId, 'shifts');
+  const querySnapshot = await getDocs(shiftsCollectionRef);
+
+  this.shifts = querySnapshot.docs.map(doc => ({
+    shiftId: doc.id,
+    ...doc.data()
+  }));
+}
+
+
+// Llamar al servicio para hacer clock in
+  async clockIn() {
+    await this.shiftService.clockIn();
+    this.isClockedIn = true;
+    this.loadShifts(); // Recargar los turnos para mostrar el nuevo
+    console.log("ClockIn en el componente");
+  }
+
+  // Llamar al servicio para hacer clock out
+  async clockOut(shiftId: string) {
+    await this.shiftService.clockOut(shiftId);
+    this.isClockedIn = false;
+    console.log("ClockOut En el Componente");
+    this.loadShifts(); // Recargar los turnos para mostrar el cambio
+  }
+
+
 }
