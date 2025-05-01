@@ -50,14 +50,12 @@ export class ShiftsTableComponent implements OnInit {
     await this.shiftService.clockIn();
     this.isClockedIn = true;
     this.loadShifts(); // Recargar los turnos para mostrar el nuevo
-    console.log("ClockIn en el componente");
   }
 
   // Llamar al servicio para hacer clock out
   async clockOut(shiftId: string) {
     await this.shiftService.clockOut(shiftId);
     this.isClockedIn = false;
-    console.log("ClockOut En el Componente");
     this.loadShifts(); // Recargar los turnos para mostrar el cambio
   }
 

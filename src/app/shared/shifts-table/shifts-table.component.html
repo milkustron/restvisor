@@ -22,13 +22,13 @@
             <td>{{ shift.end ? (shift.end.toDate() | date: 'HH:mm') : 'N/A' }}</td>
             <td>{{ shift.total }}</td>
             <td>
-                <button *ngIf="shift.state === 'ongoing'" (click)="clockOut(shift.shiftId)">Clock Out</button>
-                <button *ngIf="shift.state === 'finished'">Completed</button>
+                <button class="btn login-button col-auto" *ngIf="shift.state === 'ongoing'" (click)="clockOut(shift.shiftId)">Clock Out</button>
+                <button class="btn bg-warning col-auto" *ngIf="shift.state === 'finished'">Completed</button>
             </td>
         </tr>
         </tbody>
     </table>
     <div *ngIf="!isClockedIn">
-        <button (click)="clockIn()">Clock In</button>
+        <button class="btn login-button m-2 col-auto" (click)="clockIn()">Clock In</button>
     </div>
 </div>

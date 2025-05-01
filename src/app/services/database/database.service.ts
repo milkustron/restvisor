@@ -3,7 +3,6 @@ import { collectionData, doc, docData, updateDoc, deleteDoc } from '@angular/fir
 import { collection } from '@angular/fire/firestore';
 import { Firestore } from '@angular/fire/firestore';
 import { Reservation } from '../../models/reservation-model';
-import { WorkerShifts } from '../../models/shift-model';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,24 +30,6 @@ export class DatabaseService {
     return deleteDoc(reservationDoc);
   }
 
-  getShifts() {
-    const workerShiftsCollection = collection(this.firestore, 'workerShifts');
-    return collectionData(workerShiftsCollection);
-  }
 
-  getShiftById(id: string) {
-    const workerShiftsCollection = doc(this.firestore, `workerShifts/${id}`);
-    return docData(workerShiftsCollection);
-  }
-
-  updateShift(id: string, shift: WorkerShifts) {
-    const workerShiftsCollection = doc(this.firestore, `workerShifts/${id}`);
-    return updateDoc(workerShiftsCollection, { ...shift });
-  }
-
-  deleteShift(id: string) {
-    const workerShiftsCollection = doc(this.firestore, `workerShifts/${id}`);
-    return deleteDoc(workerShiftsCollection);
-  }
 
 }

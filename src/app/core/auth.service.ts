@@ -3,6 +3,7 @@ import { Auth, signInWithEmailAndPassword, signOut, User, onAuthStateChanged, cr
 import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable, from, map } from 'rxjs';
 import { Router } from '@angular/router';
+import {Schedule} from "../models/schedule-model";
 
 export type UserRole = 'worker' | 'supervisor';
 
@@ -63,13 +64,33 @@ export class AuthService {
 
     async register(email: string, password: string, extraData: any = {}) {
         const cred = await createUserWithEmailAndPassword(this.auth, email, password);
-
-        // Guardar en Firestore (colección: "users", documento: UID del usuario)
-        await setDoc(doc(this.firestore, 'users', cred.user.uid), {
-            uid: cred.user.uid,
+        const uid = cred.user.uid;
+        const userData = {
+            uid,
             email,
             ...extraData
-        });
+        };
+
+        // Guardar en Firestore (colección: "users", documento: UID del usuario)
+        await setDoc(doc(this.firestore, 'users', uid), userData);
+
+        if (userData.role === 'worker') {
+            const defaultSchedule: Schedule = {
+                monday: "Monday: 09:00 - 17:00",
+                tuesday: "Tuesday: 15:00 - 23:00",
+                wednesday: "Wednesday: 08:30 - 16:30",
+                thursday: "Thursday: 15:00 - 23:00",
+                friday: "Friday: 08:30 - 16:30",
+            };
+
+
+            await setDoc(doc(this.firestore, 'workerSchedule', uid), {
+                employeeId: uid,
+                schedule: defaultSchedule
+            });
+        }
+
+
     }
 
     // Obtener los datos del usuario actual desde Firestore

@@ -1,3 +1,7 @@
+@import '../../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+
 .gradient-bg {
     background: radial-gradient(at bottom right,
                 rgba(238, 222, 179, 0.92),
