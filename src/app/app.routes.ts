@@ -7,7 +7,6 @@ import { WorkerProfileComponent } from './pages/worker-profile/worker-profile.co
 import { MenuOperationComponent } from './pages/menu-operation/menu-operation.component';
 import { MenuEditComponent } from './pages/menu-edit/menu-edit.component';
 import { MenuClientComponent } from './pages/menu-client/menu-client.component';
-import { AdminComponent } from './pages/admin/admin.component';
 import { authGuard } from './core/auth.guard';
 import { supervisorGuard } from './core/supervisor.guard';
 import { workerGuard } from './core/worker.guard';
