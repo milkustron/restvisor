@@ -4,7 +4,7 @@ import { Firestore, doc, setDoc, getDoc } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable, from, map } from 'rxjs';
 import { Router } from '@angular/router';
 
-export type UserRole = 'employee' | 'supervisor' | 'admin';
+export type UserRole = 'worker' | 'supervisor';
 
 interface UserData {
   uid: string;
@@ -39,10 +39,7 @@ export class AuthService {
                 case 'supervisor':
                     await this.router.navigate(['/supervisor']);
                     break;
-                case 'admin':
-                    await this.router.navigate(['/admin']);
-                    break;
-                case 'employee':
+                case 'worker':
                     await this.router.navigate(['/worker']);
                     break;
                 default:

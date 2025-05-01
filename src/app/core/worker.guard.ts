@@ -7,7 +7,7 @@ export const workerGuard = () => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  return authService.hasRole('employee').pipe(
+  return authService.hasRole('worker').pipe(
     take(1),
     map(isWorker => {
       if (isWorker) {

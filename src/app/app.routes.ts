@@ -11,14 +11,12 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { authGuard } from './core/auth.guard';
 import { supervisorGuard } from './core/supervisor.guard';
 import { workerGuard } from './core/worker.guard';
-import { adminGuard } from './core/admin.guard';
 
 export const routes: Routes = [
     { path: '', component: IndexComponent },
     { path: 'sign-up', component: SignUpComponent },
     { path: 'supervisor', component: SupervisorComponent, canActivate: [authGuard, supervisorGuard] },
     { path: 'worker', component: WorkerComponent, canActivate: [authGuard, workerGuard] },
-    { path: 'admin', component: AdminComponent, canActivate: [authGuard, adminGuard] },
     { path: 'worker-profile', component: WorkerProfileComponent },
     { path: 'menu-operation', component: MenuOperationComponent },
     { path: 'menu-edit', component: MenuEditComponent },

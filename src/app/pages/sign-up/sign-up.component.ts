@@ -3,7 +3,7 @@ import {CommonModule} from "@angular/common";
 import {SignUpFormComponent, UserRole} from "../../shared/sign-up-form/sign-up-form.component";
 import {Router} from "@angular/router";
 import {NavbarMainComponent} from "../../shared/navbar-main/navbar-main.component";
-import { AuthService } from  "../../services/auth.service"
+import { AuthService } from  "../../core/auth.service"
 
 @Component({
   selector: 'app-sign-up',
@@ -17,7 +17,8 @@ export class SignUpComponent {
 
   async onFormSubmit(data: { name: string; email: string; password: string; role: UserRole; extra?: any }) {
     try {
-      await this.authService.registerUser(data.email, data.password, data.role, {
+      await this.authService.register(data.email, data.password,  {
+        role: data.role,
         name: data.name,
         ...data.extra
       });
