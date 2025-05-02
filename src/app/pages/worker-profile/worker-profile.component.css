@@ -1,0 +1,231 @@
+.gradient-bg {
+    background: radial-gradient(at bottom right,
+    rgba(238, 222, 179, 0.92),
+    rgba(255, 87, 65, 0.92)),
+    url('../../../assets/images/background.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+}
+body.modal-open {
+    overflow: hidden !important;
+}
+
+
+/*TYPOGRAPHY*/
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: normal;
+    color: #fff;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 250;
+    font-size: 16px;
+    line-height: normal;
+    color: #fff;
+    margin: 0;
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: normal;
+    color: #36291C;
+    margin: 0;
+}
+
+h4{
+    font-family: 'Inter', sans-serif;
+    font-weight: 330;
+    font-size: 16px;
+    line-height: normal;
+    color: #36291C;
+    margin: 0;
+}
+
+h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 350;
+    font-size: 40px;
+    line-height: normal;
+    color: #FD493B;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/***************/
+/*BUTTONS*/
+.login-button {
+    background-color: #F14040;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.login-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.signup-button {
+    background-color: white;
+    color: #F14040;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.signup-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.yellow-button {
+    background-color: #f1de47;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.yellow-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.black-button {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.gray-button {
+    background-color: #6C757D;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+
+.white-button {
+    background-color: white;
+    color: #FD493B;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+}
+/***************/
+
+
+/*NAVBAR*/
+.navbar{
+    background-color: rgba(248, 45, 45, 0.6);
+}
+/***************/
+
+/*SIDEBAR WORKER*/
+.sidebar{
+    background-color: rgba(248, 45, 45, 0.33);
+    border-radius: 15px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.green { background-color: green; }
+.red { background-color: red; }
+
+/***************/
+
+/*TABLES*/
+.reservation-table{
+    background-color: rgba(248, 255, 255, 0.59);
+    border-radius: 15px;
+}
+/***************/
+
+/*MAIN VIEW*/
+.main-contrainer {
+    background-color: rgba(248, 255, 255, 0.59);
+    border-radius: 15px;
+    width: 80vw;
+    max-width: 520px;
+    height: auto;
+    padding: 5vw;
+    text-align: justify;
+}
+
+.main-contrainer h5 {
+    margin-top: 30px;
+}
+
+.button-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.mockup {
+    width: 50vw;
+    max-width: 530px;
+    height: auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+/***************/
+
+
+/*MODALS*/
+
+.modal-content {
+    background-color: #FE854C;
+    border:none;
+}
+
+.modal-header {
+    border:none;
+}
+
+.modal-footer {
+    border:none;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.modal-body label {
+    font-size: 16px;
+    color: white;
+}
+
+.modal-body input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/***************/
