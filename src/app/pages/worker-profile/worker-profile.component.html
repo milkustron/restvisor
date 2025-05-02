@@ -9,18 +9,18 @@
             <div class="col-9">
                 <div class="row h-50">
                     <div class="col-6 d-flex justify-content-start align-items-center">
-                        <h5 class="mb-4">Employee Name</h5>
+                        <h5 class="mb-4">Name: {{ worker.name }}</h5>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center">
-                        <h5 class="mb-4 ">DD/MM/YYYY</h5>
+                        <h5 class="mb-4 ">{{ timeData | date:'dd/MM/yyyy' }}</h5>
                     </div>
                 </div>
                 <div class="row h-50">
                     <div class="col-6 d-flex justify-content-start align-items-center">
-                        <h5 class="mb-4">Position</h5>
+                        <h5 class="mb-4">Role: {{ worker.role }}</h5>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center">
-                        <h5 class="mb-4">Day</h5>
+                        <h5 class="mb-4">{{ timeData | date:'EEEE' }}</h5>
                     </div>
                 </div>
             </div>
