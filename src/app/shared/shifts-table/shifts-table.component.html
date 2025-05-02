@@ -1,34 +1,35 @@
 <div class="reservation-table shadow">
     <div class="row">
         <div class="col-6 d-flex align-items-center justify-content-start px-4 py-1">
-            <h4 class="text-center">Shifts</h4>
+            <h4 class="text-xxl-center">Shifts</h4>
         </div>
     </div>
-    <table class="w-100 text-center">
-        <hr>
-        <thead>
-        <tr>
-            <th>Date</th>
-            <th>Start</th>
-            <th>Finish</th>
-            <th>Total</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let shift of shifts">
-            <td>{{ shift.date.toDate() | date }}</td>
-            <td>{{ shift.start.toDate() | date: 'HH:mm' }}</td>
-            <td>{{ shift.end ? (shift.end.toDate() | date: 'HH:mm') : 'N/A' }}</td>
-            <td>{{ shift.total }}</td>
-            <td>
-                <button class="btn login-button col-auto" *ngIf="shift.state === 'ongoing'" (click)="clockOut(shift.shiftId)">Clock Out</button>
-                <button class="btn bg-warning col-auto" *ngIf="shift.state === 'finished'">Completed</button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <table class="text-center mb-2">
+            <thead class="mb-2">
+            <tr>
+                <th>Date</th>
+                <th>Start</th>
+                <th>Finish</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let shift of shifts">
+                <td>{{ shift.date.toDate() | date }}</td>
+                <td>{{ shift.start.toDate() | date: 'HH:mm' }}</td>
+                <td>{{ shift.end ? (shift.end.toDate() | date: 'HH:mm') : 'N/A' }}</td>
+                <td>{{ shift.total }}</td>
+                <td>
+                    <button class="btn login-button col-auto" *ngIf="shift.state === 'ongoing'" (click)="clockOut(shift.shiftId)">Clock Out</button>
+                    <button class="btn bg-warning col-auto" *ngIf="shift.state === 'finished'">Completed</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
     <div *ngIf="!isClockedIn">
-        <button class="btn login-button m-2 col-auto" (click)="clockIn()">Clock In</button>
+        <button class="btn login-button m-2 col-lg-auto" (click)="clockIn()">Clock In</button>
     </div>
 </div>

@@ -3,21 +3,27 @@
 <app-navbar-main></app-navbar-main>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3 p-3 d-flex align-items-center justify-content-center">
-            <div style="background-color: darkgray; height: 20vh; width: 15vh"></div>
+        <div class="col-3 d-flex justify-content-center align-items-center mb-5 mt-4">
+            <img src="assets/images/profilw-photo.webp" alt="logo" class="img-fluid w-50">
         </div>
-        <div class="col-9 d-flex">
-            <div class="row w-100">
-                <div class="col-6 d-flex flex-column justify-content-center align-items-start">
-                    <h3 id="name"></h3>
-                    <h3 id="email"></h3>
+        <div class="col-9">
+            <div class="row h-50">
+                <div class="col-6 d-flex justify-content-start align-items-center">
+                    <h5 class="mb-4">Restaurant Name</h5>
                 </div>
-                <div class="col-6 d-flex flex-column justify-content-center align-items-end">
-                    <h3 id="date"></h3>
-                    <h3 id="weekDay"></h3>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <h5 class="mb-4 ">DD/MM/YYYY</h5>
                 </div>
             </div>
-        </div>        
+            <div class="row h-50">
+                <div class="col-6 d-flex justify-content-start align-items-center">
+                    <h5 class="mb-4">Position</h5>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <h5 class="mb-4">Day</h5>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row justify-content-center mx-5">
         <app-worker-schedule class="col-md-3 px-3  my-3"></app-worker-schedule>
