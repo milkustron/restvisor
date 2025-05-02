@@ -42,6 +42,7 @@ export class ShiftsTableComponent implements OnInit {
     shiftId: doc.id,
     ...doc.data()
   }));
+  console.log()
 }
 
 
