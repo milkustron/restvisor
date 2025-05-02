@@ -10,6 +10,7 @@ import { MenuClientComponent } from './pages/menu-client/menu-client.component';
 import { authGuard } from './core/auth.guard';
 import { supervisorGuard } from './core/supervisor.guard';
 import { workerGuard } from './core/worker.guard';
+import {PruebasComponent} from "./shared/pruebas/pruebas.component";
 
 export const routes: Routes = [
     { path: '', component: IndexComponent },
@@ -20,4 +21,5 @@ export const routes: Routes = [
     { path: 'menu-operation', component: MenuOperationComponent },
     { path: 'menu-edit', component: MenuEditComponent },
     { path: 'menu-client', component: MenuClientComponent },
+    { path: 'pruebas', component: PruebasComponent},
 ];

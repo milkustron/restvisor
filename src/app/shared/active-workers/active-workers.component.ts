@@ -1,45 +1,67 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Firestore, collection, getDocs, doc, getDoc } from '@angular/fire/firestore';
-import { Observable, of } from 'rxjs';
-import { CommonModule } from '@angular/common'; // ⬅️
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Firestore, collection, doc, getDoc, onSnapshot } from '@angular/fire/firestore';
+import { BehaviorSubject, Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-active-workers',
     standalone: true,
-    imports: [CommonModule], // ⬅️ Añádelo aquí
+    imports: [CommonModule],
     templateUrl: './active-workers.component.html',
     styleUrls: ['./active-workers.component.css']
 })
-export class ActiveWorkersComponent implements OnInit {
+export class ActiveWorkersComponent implements OnInit, OnDestroy {
     private firestore = inject(Firestore);
-    activeWorkers$: Observable<{ name: string, id: string }[]> = of([]);
+    private activeWorkersMap = new Map<string, { name: string, id: string }>();
+    activeWorkers$ = new BehaviorSubject<{ name: string, id: string }[]>([]);
 
-    async ngOnInit() {
-        const colRef = collection(this.firestore, 'workerShifts');
-        const snapshot = await getDocs(colRef);
+    private unsubscribes: (() => void)[] = [];
 
-        const activeWorkerPromises = snapshot.docs.map(async (docSnap) => {
-            const data = docSnap.data() as any;
-            const shiftsRef = collection(this.firestore, 'workerShifts', docSnap.id, 'shifts'); // subcolección
-            const shiftSnaps = await getDocs(shiftsRef);
+    ngOnInit() {
+        const workerShiftsRef = collection(this.firestore, 'workerShifts');
 
-            const hasOngoingShift = shiftSnaps.docs.some(shift => shift.data()['state'] === 'ongoing');
+        const unsubMain = onSnapshot(workerShiftsRef, (snapshot) => {
+            // Cancelar antiguos listeners
+            this.unsubscribes.forEach(unsub => unsub());
+            this.unsubscribes = [];
 
-            if (hasOngoingShift) {
-                const userDoc = await getDoc(doc(this.firestore, 'users', data.employeeId));
-                const userData = userDoc.exists() ? userDoc.data() : { name: 'Unknown' };
-                return { id: data.employeeId, name: userData['name'] };
-            }
+            snapshot.docs.forEach((docSnap) => {
+                const workerId = docSnap.id;
+                const employeeId = docSnap.data()['employeeId'];
+                const shiftsRef = collection(this.firestore, 'workerShifts', workerId, 'shifts');
 
-            console.log('workerShifts:', snapshot.docs.length);
-            console.log('shifts found:', shiftSnaps.docs.map(d => d.data()));
+                const unsubShifts = onSnapshot(shiftsRef, async (shiftsSnap) => {
+                    const hasOngoing = shiftsSnap.docs.some(s => s.data()['state'] === 'ongoing');
 
+                    if (hasOngoing) {
+                        if (!this.activeWorkersMap.has(employeeId)) {
+                            const userDoc = await getDoc(doc(this.firestore, 'users', employeeId));
+                            const name = userDoc.exists() ? userDoc.data()?.['name'] : 'Unknown';
+                            this.activeWorkersMap.set(employeeId, { name, id: employeeId });
+                            this.updateActiveWorkers();
+                        }
+                    } else {
+                        if (this.activeWorkersMap.has(employeeId)) {
+                            this.activeWorkersMap.delete(employeeId);
+                            this.updateActiveWorkers();
+                        }
+                    }
+                });
 
-            return null;
+                this.unsubscribes.push(unsubShifts);
+            });
         });
 
-        const resolved = await Promise.all(activeWorkerPromises);
-        this.activeWorkers$ = of(resolved.filter(Boolean) as { name: string, id: string }[]);
+        this.unsubscribes.push(unsubMain);
+    }
+
+    ngOnDestroy() {
+        this.unsubscribes.forEach(unsub => unsub());
+    }
+
+
+    private updateActiveWorkers() {
+        this.activeWorkers$.next(Array.from(this.activeWorkersMap.values()));
     }
 
 }
