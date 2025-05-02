@@ -12,6 +12,7 @@ interface UserData {
   email: string;
   name: string;
   role: UserRole;
+  businessName: string
 }
 
 @Injectable({ providedIn: 'root' })

@@ -3,24 +3,24 @@
 <div class="container-fluid py-4 px-3">
     <div class="row">
         <div class="row">
-            <div class="col-3 d-flex justify-content-center align-items-center mb-4">
-                <img src="assets/images/dish.png" alt="logo" class="img-fluid">
+            <div class="col-3 d-flex justify-content-center align-items-center mb-5 mt-4">
+                <img src="assets/images/profilw-photo.webp" alt="logo" class="img-fluid w-50">
             </div>
             <div class="col-9">
                 <div class="row h-50">
                     <div class="col-6 d-flex justify-content-start align-items-center">
-                        <h5 class="mb-4">Restaurant Name</h5>
+                        <h5 class="mb-4">Name: {{ supervisor.name }}</h5>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center">
-                        <h5 class="mb-4 ">DD/MM/YYYY</h5>
+                        <h5 class="mb-4 ">{{ timeData | date:'dd/MM/yyyy' }}</h5>
                     </div>
                 </div>
                 <div class="row h-50">
                     <div class="col-6 d-flex justify-content-start align-items-center">
-                        <h5 class="mb-4">Position</h5>
+                        <h5 class="mb-4">{{ supervisor.businessName }}</h5>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center">
-                        <h5 class="mb-4">Day</h5>
+                        <h5 class="mb-4">{{ timeData | date:'EEEE' }}</h5>
                     </div>
                 </div>
             </div>
@@ -29,14 +29,13 @@
             <div class="col-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Active Workers</h5>
+                        <app-active-workers></app-active-workers>
                     </div>
                 </div>
             </div>
              <!-- Tabla de reservas -->
             <div class="col-9">
                 <app-reservations-table></app-reservations-table>
-                <app-active-workers></app-active-workers>
             </div>
         </div>
        

@@ -1,5 +1,5 @@
-<div class="card shadow-sm p-3">
-    <h5 class="card-title mb-3">🟢 Active Workers</h5>
+<div>
+    <h5 >🟢 Active Workers</h5>
 
     <ng-container *ngIf="activeWorkers$ | async as workers">
         <div *ngIf="workers.length === 0" class="text-muted">
