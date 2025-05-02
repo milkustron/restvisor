@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ShiftService } from '../../services/shifts/shift.service';
 import { AuthService } from '../../core/auth.service';
-import {Firestore, collection, getDocs} from '@angular/fire/firestore';
-import {CommonModule, DatePipe} from "@angular/common";
+import { Firestore, collection, getDocs } from '@angular/fire/firestore';
+import { CommonModule, DatePipe } from "@angular/common";
 
 @Component({
   selector: 'app-shifts-table',
@@ -18,10 +18,10 @@ export class ShiftsTableComponent implements OnInit {
   isClockedIn: boolean = false;
 
   constructor(
-      private shiftService: ShiftService,
-      private authService: AuthService,
-      private firestore: Firestore
-  ) {}
+    private shiftService: ShiftService,
+    private authService: AuthService,
+    private firestore: Firestore
+  ) { }
 
   ngOnInit(): void {
     this.loadShifts();
@@ -31,22 +31,22 @@ export class ShiftsTableComponent implements OnInit {
 
 
   async loadShifts() {
-  const user = this.authService.currentUser;
-  if (!user) return;
+    const user = this.authService.currentUser;
+    if (!user) return;
 
-  const employeeId = user.uid;
-  const shiftsCollectionRef = collection(this.firestore, 'workerShifts', employeeId, 'shifts');
-  const querySnapshot = await getDocs(shiftsCollectionRef);
+    const employeeId = user.uid;
+    const shiftsCollectionRef = collection(this.firestore, 'workerShifts', employeeId, 'shifts');
+    const querySnapshot = await getDocs(shiftsCollectionRef);
 
-  this.shifts = querySnapshot.docs.map(doc => ({
-    shiftId: doc.id,
-    ...doc.data()
-  }));
-  console.log()
-}
+    this.shifts = querySnapshot.docs.map(doc => ({
+      shiftId: doc.id,
+      ...doc.data()
+    }));
+    console.log()
+  }
 
 
-// Llamar al servicio para hacer clock in
+  // Llamar al servicio para hacer clock in
   async clockIn() {
     await this.shiftService.clockIn();
     this.isClockedIn = true;
