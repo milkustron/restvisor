@@ -17,10 +17,10 @@
             </thead>
             <tbody>
                 <tr *ngFor="let shift of shifts">
-                    <td>{{ shift.date.toDate() | date }}</td>
-                    <td>{{ shift.start.toDate() | date: 'HH:mm' }}</td>
+                    <td>{{ shift.date ? (shift.date.toDate() | date) : 'N/A' }}</td>
+                    <td>{{ shift.start ? (shift.start.toDate() | date: 'HH:mm') : 'N/A' }}</td>
                     <td>{{ shift.end ? (shift.end.toDate() | date: 'HH:mm') : 'N/A' }}</td>
-                    <td>{{ shift.total }}</td>
+                    <td>{{ shift.total || '0h' }}</td>
                     <td>
                         <button class="btn login-button col-auto" *ngIf="shift.state === 'ongoing'"
                             (click)="clockOut(shift.shiftId)">Clock Out</button>
