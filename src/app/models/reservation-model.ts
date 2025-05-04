@@ -5,4 +5,5 @@ export interface Reservation {
   time: string;
   guests: number;
   status: string;
+  supervisorUid: string;
 }

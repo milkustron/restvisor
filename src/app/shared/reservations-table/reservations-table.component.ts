@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Firestore, collection, collectionData, doc, updateDoc, deleteDoc, addDoc } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, updateDoc, deleteDoc, addDoc, query, where } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../core/auth.service';
 
 interface Reservation {
   id?: string;
@@ -11,6 +12,7 @@ interface Reservation {
   time: string;
   guests: number;
   state: string;
+  supervisorUid: string;
 }
 
 @Component({
@@ -27,19 +29,29 @@ export class ReservationsTableComponent implements OnInit {
     phone: '',
     time: '',
     guests: 1,
-    state: 'Pending'
+    state: 'Pending',
+    supervisorUid: ''
   };
 
-  constructor(private firestore: Firestore) {
-    const reservationsCollection = collection(this.firestore, 'reservations');
-    this.reservations$ = collectionData(reservationsCollection, { idField: 'id' }) as Observable<Reservation[]>;
+  constructor(
+    private firestore: Firestore,
+    private authService: AuthService
+  ) {
+    const user = this.authService.currentUser;
+    if (user) {
+      const reservationsCollection = collection(this.firestore, 'reservations');
+      const q = query(reservationsCollection, where('supervisorUid', '==', user.uid));
+      this.reservations$ = collectionData(q, { idField: 'id' }) as Observable<Reservation[]>;
+    } else {
+      this.reservations$ = new Observable<Reservation[]>();
+    }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   async onConfirmReservation(reservation: Reservation): Promise<void> {
     if (!reservation.id) return;
-    
+
     const reservationRef = doc(this.firestore, 'reservations', reservation.id);
     await updateDoc(reservationRef, {
       state: 'Confirmed'
@@ -48,7 +60,7 @@ export class ReservationsTableComponent implements OnInit {
 
   async onCancelReservation(reservation: Reservation): Promise<void> {
     if (!reservation.id) return;
-    
+
     const reservationRef = doc(this.firestore, 'reservations', reservation.id);
     await updateDoc(reservationRef, {
       state: 'Cancelled'
@@ -57,24 +69,32 @@ export class ReservationsTableComponent implements OnInit {
 
   async onDeleteReservation(reservation: Reservation): Promise<void> {
     if (!reservation.id) return;
-    
+
     const reservationRef = doc(this.firestore, 'reservations', reservation.id);
     await deleteDoc(reservationRef);
   }
 
   resetNewReservation(): void {
+    const user = this.authService.currentUser;
     this.newReservation = {
       name: '',
       phone: '',
       time: '',
       guests: 1,
-      state: 'Pending'
+      state: 'Pending',
+      supervisorUid: user?.uid || ''
     };
   }
 
   async onAddReservation(): Promise<void> {
+    const user = this.authService.currentUser;
+    if (!user) return;
+
     const reservationsCollection = collection(this.firestore, 'reservations');
-    await addDoc(reservationsCollection, this.newReservation);
+    await addDoc(reservationsCollection, {
+      ...this.newReservation,
+      supervisorUid: user.uid
+    });
     this.resetNewReservation();
   }
 }
