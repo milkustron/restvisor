@@ -1,0 +1,70 @@
+.gradient-bg {
+    background: radial-gradient(at bottom right,
+                rgba(238, 222, 179, 0.92),
+                rgba(255, 87, 65, 0.92)),
+            url('../../../assets/images/background.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        min-height: 100vh;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    color: white;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.yellow-button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.yellow-button:hover {
+    background-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-button:hover {
+    background-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+    color: white;
+}
+
+h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 330;
+    font-size: 16px;
+    color: white;
+}

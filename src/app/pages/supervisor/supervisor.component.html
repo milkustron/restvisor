@@ -32,40 +32,34 @@
                         <app-active-workers></app-active-workers>
                     </div>
                 </div>
+                <div class="mt-3">
+                    <button class="yellow-button" routerLink="/menu-operation">MENU</button>
+                </div>
             </div>
-             <!-- Tabla de reservas -->
+            <!-- Tabla de reservas -->
             <div class="col-9">
                 <app-reservations-table></app-reservations-table>
             </div>
         </div>
-       
-        
+
+
     </div>
 </div>
 
 <!-- Modal de Confirmación -->
-<app-generic-modal
-        modalId="confirmReservationModal"
-        title="Confirm Reservation"
-        message="Are you sure you want to confirm this reservation?"
-        confirmText="Confirm"
-        (confirmed)="onConfirmReservation()">
+<app-generic-modal modalId="confirmReservationModal" title="Confirm Reservation"
+    message="Are you sure you want to confirm this reservation?" confirmText="Confirm"
+    (confirmed)="onConfirmReservation()">
 </app-generic-modal>
 
 <!-- Modal de Cancelación -->
-<app-generic-modal
-        modalId="cancelReservationModal"
-        title="Cancel Reservation"
-        message="This will cancel the reservation. Do you want to proceed?"
-        confirmText="Cancel"
-        (confirmed)="onCancelReservation()">
+<app-generic-modal modalId="cancelReservationModal" title="Cancel Reservation"
+    message="This will cancel the reservation. Do you want to proceed?" confirmText="Cancel"
+    (confirmed)="onCancelReservation()">
 </app-generic-modal>
 
 <!-- Modal de Eliminación -->
-<app-generic-modal
-        modalId="deleteReservationModal"
-        title="Delete Reservation"
-        message="This action will permanently delete the reservation. Continue?"
-        confirmText="Delete"
-        (confirmed)="onDeleteReservation()">
+<app-generic-modal modalId="deleteReservationModal" title="Delete Reservation"
+    message="This action will permanently delete the reservation. Continue?" confirmText="Delete"
+    (confirmed)="onDeleteReservation()">
 </app-generic-modal>

@@ -1,0 +1,90 @@
+.gradient-bg {
+    background: radial-gradient(at bottom right,
+                rgba(238, 222, 179, 0.92),
+                rgba(255, 87, 65, 0.92)),
+            url('../../../assets/images/background.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        min-height: 100vh;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    color: white;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.yellow-button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.yellow-button:hover {
+    background-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 23px;
+    color: white;
+}
+
+h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 330;
+    font-size: 16px;
+    color: white;
+}
+
+.table {
+    color: white;
+}
+
+.form-label {
+    color: white;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #FFD700;
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-content {
+    background: #2d2d2d;
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

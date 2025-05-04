@@ -12,3 +12,19 @@ h5{
     border-radius: 15px;
     overflow: hidden;
 }
+
+.yellow-button {
+    background-color: #f1de47;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.yellow-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
