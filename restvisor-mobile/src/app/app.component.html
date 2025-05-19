@@ -1,3 +1,17 @@
+<ion-header style="height: 3rem">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="isLoggedIn" (click)="logout()">Logout</ion-button>
+      <ion-button *ngIf="!isLoggedIn" [routerLink]="'/auth/login'"
+        >Login</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

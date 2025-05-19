@@ -7,24 +7,23 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'folder/:id',
-    loadComponent: () =>
-      import('./folder/folder.page').then((m) => m.FolderPage),
-  },
-  {
     path: 'register',
     loadComponent: () =>
-      import('./auth/register/register.page').then((m) => m.RegisterPage),
+      import('./auth/register/register.component').then(
+        (m) => m.RegisterComponent
+      ),
   },
   {
     path: 'login',
     loadComponent: () =>
-      import('./auth/login/login.page').then((m) => m.LoginPage),
+      import('./auth/login/login.component').then((m) => m.LoginComponent),
   },
   {
     path: 'favorites',
     loadComponent: () =>
-      import('./favorites/favorites.page').then((m) => m.FavoritesPage),
+      import('./favorites/favorites.component').then(
+        (m) => m.FavoritesComponent
+      ),
   },
   {
     path: 'detail',

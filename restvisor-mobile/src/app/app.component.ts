@@ -1,5 +1,4 @@
-
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
@@ -74,16 +73,18 @@ import { DetailsComponent } from '../app/details/details.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
-  public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
-  ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {
-    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
+  public appPages = [{ title: 'Inbox', url: '/folder/inbox', icon: 'mail' }];
+  public isLoggedIn = false;
+
+  constructor(private authService: AuthService, private router: Router) {
+    this.authService.getCurrentUser().subscribe((user) => {
+      this.isLoggedIn = !!user;
+    });
+  }
+
+  logout() {
+    this.authService.signOut().then(() => {
+      this.router.navigate(['/auth/login']);
+    });
   }
 }
