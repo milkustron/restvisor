@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/inbox',
+    redirectTo: '',
     pathMatch: 'full',
   },
   {
@@ -29,6 +29,6 @@ export const routes: Routes = [
   {
     path: 'detail',
     loadComponent: () =>
-      import('./detail/detail.page').then((m) => m.DetailPage),
-  },
+      import('./details/details.component').then((m) => m.DetailsComponent),
+  }
 ];

@@ -15,6 +15,10 @@ import { AppComponent } from './app/app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from './environments/environment';
+import { SQLiteConnection } from '@capacitor-community/sqlite';
+import { CapacitorSQLite } from '@capacitor-community/sqlite';
+
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -22,19 +26,15 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideFirebaseApp(() =>
-      initializeApp({
-        projectId: 'restvisor-887b9',
-        appId: '1:674854508849:web:dd6b8ca735af7f4ab07810',
-        databaseURL:
-          'https://restvisor-887b9-default-rtdb.europe-west1.firebasedatabase.app',
-        storageBucket: 'restvisor-887b9.firebasestorage.app',
-        apiKey: 'AIzaSyDHAtQI2VBlhvYI8Vtmy7Pk2LqBUy4O1cM',
-        authDomain: 'restvisor-887b9.firebaseapp.com',
-        messagingSenderId: '674854508849',
-        measurementId: 'G-Z6GVHFKTXD',
-      })
+      initializeApp(environment.firebaseConfig
+      )
     ),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+        {
+      provide: SQLiteConnection,
+      useFactory: () => new SQLiteConnection(CapacitorSQLite),
+    },
   ],
 });
+

@@ -29,9 +29,10 @@
     "@capacitor/haptics": "latest",
     "@capacitor/keyboard": "latest",
     "@capacitor/status-bar": "latest",
-    "@ionic/angular": "^8.0.0",
+    "@ionic/angular": "^8.5.7",
+    "bootstrap": "^5.3.6",
     "firebase": "^11.7.1",
-    "ionicons": "^7.0.0",
+    "ionicons": "^7.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

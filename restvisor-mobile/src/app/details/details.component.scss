@@ -1,0 +1,73 @@
+:host {
+    display: block;
+    --background: linear-gradient(to bottom right, #ff5e3a, #ff763b);
+}
+
+::ng-deep ion-content {
+    --background: none;
+    background:
+        radial-gradient(at bottom right,
+                rgba(238, 222, 179, 0.92),
+                rgba(255, 87, 65, 0.92)),
+        url('../../assets/images/background.png') no-repeat center center / cover;
+    color: white;
+}
+
+
+::ng-deep ion-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;
+    width: 90%;
+    max-width: 500px;
+}
+
+::ng-deep ion-card img {
+    max-width: 120px;
+    border-radius: 12px;
+    display: block;
+    margin: 20px auto 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+::ng-deep ion-card-content p {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.4;
+    color: white;
+    padding: 0 10px;
+}
+
+::ng-deep ion-button {
+    --background: #F14040;
+    --background-activated: #F14040;
+    --border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 25px auto 40px;
+    width: 90%;
+    max-width: 500px;
+    transition: transform 0.2s ease;
+}
+
+::ng-deep ion-button:hover {
+    transform: scale(1.02);
+}
+
+::ng-deep ion-toolbar {
+    --background: transparent;
+    --color: white;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+::ng-deep ion-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+::ng-deep ion-back-button {
+    color: white;
+}

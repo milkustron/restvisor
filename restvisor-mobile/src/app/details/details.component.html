@@ -1,0 +1,23 @@
+<!-- Osadzony navbar jako osobny komponent -->
+<app-navbar-main></app-navbar-main>
+
+<ion-content class="ion-padding" fullscreen>
+  <ion-card>
+    <img [src]="reservation?.imageUrl || 'assets/photos/' + reservation?.registrantId + '.jpg'" alt="Photo" />
+
+    <ion-card-header>
+      <ion-card-title>Reservation Details</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Name of registrant: {{ reservation?.registrantName }}</p>
+      <p>Registrant role: {{ reservation?.registrantRole }}</p>
+      <p>Time of reservation: {{ reservation?.time }}</p>
+      <p>Special request: {{ reservation?.specialRequest }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" (click)="toggleFavorite()">
+    {{ isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }}
+  </ion-button>
+</ion-content>
