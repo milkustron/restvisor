@@ -1,0 +1,58 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ff5e3a, #ff763b);
+    padding: 12px 20px;
+    color: white;
+    z-index: 10;
+    position: relative;}
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+
+        img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+    }
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+
+    button {
+        background-color: #f14040;
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+        background-color: #d63333;
+        transform: translateY(-1px);
+    }
+}
+
+::ng-deep ion-toolbar {
+    --background: transparent;
+    backdrop-filter: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+}

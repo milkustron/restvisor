@@ -1,0 +1,17 @@
+<nav class="navbar">
+    <a class="navbar-brand" routerLink="/">
+        <img src="/assets/images/logo.png" alt="Logo" />
+        <h1>RestVisor</h1>
+    </a>
+
+    <div class="auth-buttons">
+        <button routerLink="/">BACK</button>
+        <ng-container *ngIf="user$ | async as user; else guest">
+            <span>{{ user.email }}</span>
+            <button (click)="logout()">LOG OUT</button>
+        </ng-container>
+        <ng-template #guest>
+            <button routerLink="/login">LOGIN</button>
+        </ng-template>
+    </div>
+</nav>
